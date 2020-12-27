@@ -1,4 +1,4 @@
 __pycache__/
 venv/
-ryven-ext/packages/**/*.py
-!ryven-ext/packages/**/*METACODE.py
+packages/**/*.py
+!packages/**/*METACODE.py
