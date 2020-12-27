@@ -1,0 +1,112 @@
+{
+    "type": "Ryven nodes package",
+    "nodes": [
+        {
+            "title": "scenario",
+            "description": "Configure an IoD Sim scenario.",
+            "type": "Scenario",
+            "module name": "airflow___Scenario0",
+            "class name": "Scenario",
+            "design style": "extended",
+            "color": "#3f51b5",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Name",
+                    "has widget": true,
+                    "widget name": "std line edit m r",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Log on File",
+                    "has widget": true,
+                    "widget name": "std line edit m r nb",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Duration",
+                    "has widget": true,
+                    "widget name": "std spin box",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Log Components",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Propagation Loss Model",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Drone Container",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "ZSP Container",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": "Results"
+                }
+            ]
+        },
+        {
+            "title": "boolean",
+            "description": "",
+            "type": "Boolean",
+            "module name": "airflow___Boolean0",
+            "class name": "Boolean",
+            "design style": "minimalistic",
+            "color": "#4c4fe5",
+            "has main widget": true,
+            "widget position": "between ports",
+            "custom input widgets": [],
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "Save to Directory",
+            "description": "",
+            "type": "",
+            "module name": "airflow___SaveToDirectory0",
+            "class name": "SaveToDirectory",
+            "design style": "extended",
+            "color": "#5877de",
+            "has main widget": false,
+            "custom input widgets": [
+                "DirectoryChooser"
+            ],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Scenario",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Path",
+                    "has widget": true,
+                    "widget name": "DirectoryChooser",
+                    "widget position": "under"
+                }
+            ],
+            "outputs": []
+        }
+    ]
+}
