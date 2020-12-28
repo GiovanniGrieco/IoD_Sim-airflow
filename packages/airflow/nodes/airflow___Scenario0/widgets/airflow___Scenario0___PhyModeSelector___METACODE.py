@@ -8,7 +8,12 @@ class %CLASS%(QComboBox, IWB):
         QComboBox.__init__(self)
 
         self.setStyleSheet('''
-
+            QComboBox {
+                background-color: transparent;
+                border: 2px solid #404040;
+                border-radius: 7px;
+                color: #aaaaaa;
+            }
         ''')
 
         self.addItems([
