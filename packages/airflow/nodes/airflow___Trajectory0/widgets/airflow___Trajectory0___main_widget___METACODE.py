@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 matplotlib.use('Qt5Agg')
-from matplotlib.backends.backend_qt5agg import FigureCanvas, NavigationToolbar2QT as NavigationToolbar
+from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.figure import Figure
 from qbstyles import mpl_style
 from mpl_toolkits.mplot3d import Axes3D
@@ -46,17 +46,20 @@ class %CLASS%(QWidget, MWB):
         QWidget.__init__(self)
 
         self.setStyleSheet('''
-
+            background-color: transparent;
         ''')
         mpl_style(dark=True)
 
         self.setLayout(QVBoxLayout())
-        self.canvas = FigureCanvas(Figure(figsize=(5, 3)))
+        self.canvas = FigureCanvas(Figure())
         self.layout().addWidget(self.canvas)
+        self.layout().setContentsMargins(0,0,0,0)
+        self.layout().setSpacing(0)
         self.setFixedWidth(550)
         self.setFixedHeight(500)
         self.ax = self.canvas.figure.add_subplot(111, projection='3d')
-        
+        self.canvas.figure.subplots_adjust(left=0, right=1, bottom=0, top=1)
+
         self.ax.set_title('Drone Trajectory')
         self.ax.set_xlabel('[m]')
         self.ax.set_ylabel('[m]')
@@ -151,9 +154,9 @@ class %CLASS%(QWidget, MWB):
     def get_data(self):
         data = {}
         return data
-    
+
     def set_data(self, data):
         pass
-    
+
     def remove_event(self):
         pass
