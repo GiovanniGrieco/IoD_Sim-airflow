@@ -1,7 +1,6 @@
 {
     "type": "Ryven nodes package",
-    "nodes": [
-        {
+    "nodes": [{
             "title": "scenario",
             "description": "Configure an IoD Sim scenario.",
             "type": "Scenario",
@@ -13,8 +12,7 @@
             "custom input widgets": [
                 "PhyModeSelector"
             ],
-            "inputs": [
-                {
+            "inputs": [{
                     "type": "data",
                     "label": "Name",
                     "has widget": true,
@@ -82,12 +80,10 @@
             "widget position": "between ports",
             "custom input widgets": [],
             "inputs": [],
-            "outputs": [
-                {
-                    "type": "data",
-                    "label": ""
-                }
-            ]
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
         },
         {
             "title": "Select Directory",
@@ -101,12 +97,10 @@
             "widget position": "between ports",
             "custom input widgets": [],
             "inputs": [],
-            "outputs": [
-                {
-                    "type": "data",
-                    "label": ""
-                }
-            ]
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
         },
         {
             "title": "toList",
@@ -118,19 +112,15 @@
             "color": "#ffa01a",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [
-                {
-                    "type": "data",
-                    "label": "",
-                    "has widget": false
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "data",
-                    "label": ""
-                }
-            ]
+            "inputs": [{
+                "type": "data",
+                "label": "",
+                "has widget": false
+            }],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
         },
         {
             "title": "ZSP",
@@ -142,19 +132,15 @@
             "color": "#d50000",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [
-                {
-                    "type": "data",
-                    "label": "Position",
-                    "has widget": false
-                }
-            ],
-            "outputs": [
-                {
-                    "type": "data",
-                    "label": ""
-                }
-            ]
+            "inputs": [{
+                "type": "data",
+                "label": "Position",
+                "has widget": false
+            }],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
         },
         {
             "title": "vector",
@@ -166,8 +152,7 @@
             "color": "#c69a15",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [
-                {
+            "inputs": [{
                     "type": "data",
                     "label": "x",
                     "has widget": true,
@@ -189,12 +174,40 @@
                     "widget position": "besides"
                 }
             ],
-            "outputs": [
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
+        },
+        {
+            "title": "Application",
+            "description": "",
+            "type": "",
+            "module name": "airflow___Application0",
+            "class name": "Application",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [{
+                    "type": "data",
+                    "label": "Start Time",
+                    "has widget": true,
+                    "widget name": "std spin box",
+                    "widget position": "besides"
+                },
                 {
                     "type": "data",
-                    "label": ""
+                    "label": "Stop Time",
+                    "has widget": true,
+                    "widget name": "std spin box",
+                    "widget position": "besides"
                 }
-            ]
+            ],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
         }
     ]
 }
