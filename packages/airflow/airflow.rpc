@@ -10,7 +10,9 @@
             "design style": "extended",
             "color": "#3f51b5",
             "has main widget": false,
-            "custom input widgets": [],
+            "custom input widgets": [
+                "PhyModeSelector"
+            ],
             "inputs": [
                 {
                     "type": "data",
@@ -52,14 +54,21 @@
                     "type": "data",
                     "label": "ZSP Container",
                     "has widget": false
-                }
-            ],
-            "outputs": [
+                },
                 {
                     "type": "data",
-                    "label": "Results"
+                    "label": "Results Path",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "PHY Mode",
+                    "has widget": true,
+                    "widget name": "PhyModeSelector",
+                    "widget position": "besides"
                 }
-            ]
+            ],
+            "outputs": []
         },
         {
             "title": "boolean",
@@ -81,32 +90,111 @@
             ]
         },
         {
-            "title": "Save to Directory",
+            "title": "Select Directory",
             "description": "",
             "type": "",
-            "module name": "airflow___SaveToDirectory0",
-            "class name": "SaveToDirectory",
+            "module name": "airflow___SelectDirectory0",
+            "class name": "SelectDirectory",
             "design style": "extended",
             "color": "#5877de",
+            "has main widget": true,
+            "widget position": "between ports",
+            "custom input widgets": [],
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "toList",
+            "description": "Create a list from one or more inputs.",
+            "type": "ToList",
+            "module name": "airflow___ToList0",
+            "class name": "ToList",
+            "design style": "minimalistic",
+            "color": "#ffa01a",
             "has main widget": false,
-            "custom input widgets": [
-                "DirectoryChooser"
-            ],
+            "custom input widgets": [],
             "inputs": [
                 {
                     "type": "data",
-                    "label": "Scenario",
+                    "label": "",
                     "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "ZSP",
+            "description": "Create a new Zone Service Provider.",
+            "type": "ZSP",
+            "module name": "airflow___ZSP0",
+            "class name": "ZSP",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Position",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "vector",
+            "description": "",
+            "type": "Vector",
+            "module name": "airflow___Vector0",
+            "class name": "Vector",
+            "design style": "extended",
+            "color": "#c69a15",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "x",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
                 },
                 {
                     "type": "data",
-                    "label": "Path",
+                    "label": "y",
                     "has widget": true,
-                    "widget name": "DirectoryChooser",
-                    "widget position": "under"
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "z",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
                 }
             ],
-            "outputs": []
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         }
     ]
 }

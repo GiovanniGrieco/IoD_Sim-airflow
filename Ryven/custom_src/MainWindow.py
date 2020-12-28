@@ -48,6 +48,8 @@ class MainWindow(QMainWindow):
         # shortcuts
         save_shortcut = QShortcut(QKeySequence.Save, self)
         save_shortcut.activated.connect(self.on_save_project_triggered)
+        export_scenario_shortcut = QShortcut(QKeySequence('Ctrl+e'), self)
+        export_scenario_shortcut.activated.connect(self.on_export_scenario_triggered)
         import_nodes_shortcut = QShortcut(QKeySequence('Ctrl+i'), self)
         import_nodes_shortcut.activated.connect(self.on_import_nodes_triggered)
 
@@ -129,6 +131,7 @@ saving: ctrl+s
 
         self.ui.actionImport_Nodes.triggered.connect(self.on_import_nodes_triggered)
         self.ui.actionSave_Project.triggered.connect(self.on_save_project_triggered)
+        self.ui.actionExport_Scenario.triggered.connect(self.on_export_scenario_triggered)
         self.ui.actionEnableDebugging.triggered.connect(self.on_enable_debugging_triggered)
         self.ui.actionDisableDebugging.triggered.connect(self.on_disable_debugging_triggered)
         self.ui.actionSave_Pic_Viewport.triggered.connect(self.on_save_scene_pic_viewport_triggered)
@@ -482,6 +485,45 @@ saving: ctrl+s
         if file_name != '':
             self.save_project(file_name)
 
+    def on_export_scenario_triggered(self):
+        import json
+
+        # TODO try/catch
+        scenario_ni = [_in for _in in self.scripts[0].flow.all_node_instances if _in.parent_node.type_ == 'Scenario'][0]
+        values = {p.label_str: p.get_val() for p in scenario_ni.inputs}
+        Debugger.debug(values)
+
+        file_name = QFileDialog.getSaveFileName(self, 'select location and give file name',
+                                                '../saves', 'JSON File(*.json)')[0]
+        if file_name == '':
+            return
+
+        file = None
+        try:
+            if os.path.exists(file_name):
+                os.remove(file_name)
+            file = open(file_name, 'w')
+        except FileNotFoundError:
+            Debugger.debug('couldn\'t open file')
+            return
+
+        key_lookup = {
+            'Log on File': 'logOnFile',
+            'Duration': 'duration',
+            'Log Components': 'logComponents',
+            'PHY Mode': 'phyMode',
+            'Propagation Loss Model': 'phyPropagationLoss',
+            'Drone Container': 'drones',
+            'ZSP Container': 'ZSPs'
+        }
+
+        mapped_dict = {key_lookup[k]: values[k] for k in key_lookup}
+
+        data = json.dumps(mapped_dict, indent=4, sort_keys=True)
+        #Debugger.debug(data)
+
+        file.write(data)
+        file.close()
 
     def save_project(self, file_name):
         import json

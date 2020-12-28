@@ -29,15 +29,13 @@ class %CLASS%(NodeInstance):
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
 
-        self.value = False
-
     def update_event(self, input_called=-1):
-        self.set_output_val(0, self.value)
+        self.set_output_val(0, {
+            "position": self.input(0)
+        })
 
     def get_data(self):
-        data = {
-            "value": self.value
-        }
+        data = {}
         return data
 
     def set_data(self, data):

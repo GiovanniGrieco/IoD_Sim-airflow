@@ -2,10 +2,10 @@ from NIWENV import *
 from PySide2.QtWidgets import QWidget, QVBoxLayout, QLineEdit, QPushButton, QFileDialog
 
 
-class %CLASS%(QWidget, IWB):
+class %CLASS%(QWidget, MWB):
     def __init__(self, params):
-        super(%CLASS%, self).__init__()
-        #IWB.__init__(self, params)
+        MWB.__init__(self, params)
+        QWidget.__init__(self)
 
         self.directory = ''
 
@@ -50,6 +50,8 @@ class %CLASS%(QWidget, IWB):
     def set_directory_path(self, new_directory_path):
         self.directory = new_directory_path
         self.path_line_edit.setText(self.directory)
+        self.parent_node_instance.outputs[0].set_val(self.directory)
+        self.parent_node_instance.value = self.directory
 
     def get_val(self):
         return self.directory

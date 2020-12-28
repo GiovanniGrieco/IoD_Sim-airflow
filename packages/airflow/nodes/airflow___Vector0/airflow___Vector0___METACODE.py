@@ -29,15 +29,14 @@ class %CLASS%(NodeInstance):
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
 
-        self.value = False
+        # self.special_actions['action name'] = {'method': M(self.action_method)}
+        # ...
 
     def update_event(self, input_called=-1):
-        self.set_output_val(0, self.value)
+        self.set_output_val(0, [_in.get_val() for _in in self.inputs])
 
     def get_data(self):
-        data = {
-            "value": self.value
-        }
+        data = {}
         return data
 
     def set_data(self, data):

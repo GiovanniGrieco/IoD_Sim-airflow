@@ -33,6 +33,7 @@ class %CLASS%(QCheckBox, MWB):
     def on_click(self):
         state = self.isChecked()
         self.parent_node_instance.outputs[0].set_val(state)
+        self.parent_node_instance.value = state
 
     def get_data(self):
         data = {}
