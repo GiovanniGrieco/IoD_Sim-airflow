@@ -345,6 +345,64 @@
                 "type": "data",
                 "label": ""
             }]
+        },
+        {
+            "title": "Model",
+            "description": "Represents a generic model reference in ns-3.",
+            "type": "",
+            "module name": "airflow___Model0",
+            "class name": "Model",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [{
+                    "type": "data",
+                    "label": "Name",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Attributes",
+                    "has widget": false
+                }
+            ],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
+        },
+        {
+            "title": "Attribute",
+            "description": "Generic ns3 Attribute.",
+            "type": "",
+            "module name": "airflow___Attribute0",
+            "class name": "Attribute",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [{
+                    "type": "data",
+                    "label": "Name",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Value",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
         }
     ]
 }
