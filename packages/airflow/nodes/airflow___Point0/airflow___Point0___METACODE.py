@@ -32,8 +32,9 @@ class %CLASS%(NodeInstance):
 
     def update_event(self, input_called=-1):
         self.set_output_val(0, {
-            'applicationStartTime': self.input(0),
-            'applicationStopTime': self.input(1)
+            'position': self.input(0),
+            'interest': int(self.input(1)),
+            'restTime': float(self.input(2))
         })
 
     def get_data(self):

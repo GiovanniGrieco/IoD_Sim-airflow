@@ -30,7 +30,7 @@
                     "type": "data",
                     "label": "Duration",
                     "has widget": true,
-                    "widget name": "std spin box",
+                    "widget name": "std line edit m",
                     "widget position": "besides"
                 },
                 {
@@ -45,12 +45,12 @@
                 },
                 {
                     "type": "data",
-                    "label": "Drone Container",
+                    "label": "Drone List",
                     "has widget": false
                 },
                 {
                     "type": "data",
-                    "label": "ZSP Container",
+                    "label": "ZSP List",
                     "has widget": false
                 },
                 {
@@ -193,14 +193,151 @@
                     "type": "data",
                     "label": "Start Time",
                     "has widget": true,
-                    "widget name": "std spin box",
+                    "widget name": "std line edit m",
                     "widget position": "besides"
                 },
                 {
                     "type": "data",
                     "label": "Stop Time",
                     "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
+        },
+        {
+            "title": "Drone",
+            "description": "Create a new Drone Entity.",
+            "type": "Drone",
+            "module name": "airflow___Drone0",
+            "class name": "Drone",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [{
+                    "type": "data",
+                    "label": "Application",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Mobility Model",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Trajectory",
+                    "has widget": false
+                }
+            ],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
+        },
+        {
+            "title": "Constant Acceleration Drone Mobility Model",
+            "description": "Drone flight characterized by uniform acceleration.",
+            "type": "",
+            "module name": "airflow___ConstantAccelerationDroneMobilityModel0",
+            "class name": "ConstantAccelerationDroneMobilityModel",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [{
+                    "type": "data",
+                    "label": "Acceleration",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Max Speed",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
+        },
+        {
+            "title": "Parametric Speed Drone Mobility Model",
+            "description": "Drone flight characterized by its velocity variable in time.",
+            "type": "",
+            "module name": "airflow___ParametricSpeedDroneMobilityModel0",
+            "class name": "ParametricSpeedDroneMobilityModel",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [{
+                "type": "data",
+                "label": "Speed Coefficients",
+                "has widget": false
+            }],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
+        },
+        {
+            "title": "Trajectory",
+            "description": "Define Drone trajectory.",
+            "type": "",
+            "module name": "airflow___Trajectory0",
+            "class name": "Trajectory",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": true,
+            "widget position": "under ports",
+            "custom input widgets": [],
+            "inputs": [{
+                "type": "data",
+                "label": "POIs",
+                "has widget": false
+            }],
+            "outputs": [{
+                "type": "data",
+                "label": ""
+            }]
+        },
+        {
+            "title": "Point",
+            "description": "Define a POI in space for the Trajectory.",
+            "type": "Point",
+            "module name": "airflow___Point0",
+            "class name": "Point",
+            "design style": "extended",
+            "color": "#d50000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [{
+                    "type": "data",
+                    "label": "Position",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Interest Level",
+                    "has widget": true,
                     "widget name": "std spin box",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Time of Rest",
+                    "has widget": true,
+                    "widget name": "std line edit m",
                     "widget position": "besides"
                 }
             ],

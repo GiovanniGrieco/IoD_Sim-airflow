@@ -32,8 +32,9 @@ class %CLASS%(NodeInstance):
 
     def update_event(self, input_called=-1):
         self.set_output_val(0, {
-            'applicationStartTime': self.input(0),
-            'applicationStopTime': self.input(1)
+            'application': self.input(0),
+            'mobilityModel': self.input(1),
+            'trajectory': self.input(2)
         })
 
     def get_data(self):

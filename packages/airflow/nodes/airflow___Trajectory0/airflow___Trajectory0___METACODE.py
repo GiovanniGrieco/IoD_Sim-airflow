@@ -31,10 +31,12 @@ class %CLASS%(NodeInstance):
 
 
     def update_event(self, input_called=-1):
-        self.set_output_val(0, {
-            'applicationStartTime': self.input(0),
-            'applicationStopTime': self.input(1)
-        })
+        data = self.input(0)
+        if data is None:
+            return
+
+        self.set_output_val(0, data)
+        self.main_widget.redraw(data)
 
     def get_data(self):
         data = {}
