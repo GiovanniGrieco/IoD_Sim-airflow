@@ -10,3 +10,11 @@ Otherwise, you can init submodules at a later time:
 ```
 git submodule init
 ```
+
+## Python Setup
+Use Python virtualenv to prepare your development environment:
+```
+python -m venv venv
+./venv/Scripts/activate
+pip install -r requirements.txt
+```
