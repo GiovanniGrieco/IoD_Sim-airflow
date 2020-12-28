@@ -67,12 +67,10 @@ class %CLASS%(QWidget, MWB):
 
         points = [Point(p['position'], p['interest']) for p in control_points]
         trajectory = self.build_drone_trajectory(points)
-        self.build_drone_space(trajectory)
+        self.build_drone_space(trajectory, points)
 
         self.ax.legend()
         self.ax.figure.canvas.draw()
-
-
 
     def build_drone_trajectory(self, drone_positions, step=0.01):
         """
@@ -125,12 +123,13 @@ class %CLASS%(QWidget, MWB):
 
         return B
 
-    def build_drone_space(self, trajectory):
+    def build_drone_space(self, trajectory, control_points):
         """
         Draw Drone trajectory in 3D plot.
 
         Args:
             trajectory: Drone positions.
+            control_points: Curve control points.
         """
         # Plot drones trajectories as 3D lines
         # a "o" indicates the start pos. of the drone
@@ -139,8 +138,14 @@ class %CLASS%(QWidget, MWB):
         dy = [p.y for p in trajectory]
         dz = [p.z for p in trajectory]
 
-        self.ax.scatter(dx[0], dy[0], dz[0], marker='.', label='Drone start')
-        self.ax.scatter(dx[-1], dy[-1], dz[-1], marker='x', label='Drone end')
+        cpx = [p.x for p in control_points]
+        cpy = [p.y for p in control_points]
+        cpz = [p.z for p in control_points]
+
+        self.ax.scatter(dx[0], dy[0], dz[0], marker='.', label='Take off')
+        self.ax.scatter(dx[-1], dy[-1], dz[-1], marker='x', label='Landing')
+        # exclude first and last points because they are relevant to drone take off and landing
+        self.ax.scatter(cpx[1:-1], cpy[1:-1], cpz[1:-1], marker='o', label='Control point')
         self.ax.plot(dx, dy, dz, label='Drone trajectory')
 
     def get_data(self):
