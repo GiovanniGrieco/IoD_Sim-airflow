@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Ryven",
+            "type": "shell",
+            "command": "${config:python.pythonPath}",
+            "args": ["${workspaceFolder}/Ryven/Ryven.py"],
+            "group": "test",
+            "presentation": {
+                "reveal": "silent",
+                "clear": true
+            }
+        },
+        {
+            "label": "Start Node Manager",
+            "type": "shell",
+            "command": "${config:python.pythonPath}",
+            "args": ["Ryven NodeManager.py"],
+            "options": {
+                "cwd": "${workspaceFolder}/third-party/Ryven/Ryven_NodeManager/"
+            },
+            "group": "test",
+            "presentation": {
+                "reveal": "silent",
+                "clear": true
+            }
+        }
+    ]
+}
