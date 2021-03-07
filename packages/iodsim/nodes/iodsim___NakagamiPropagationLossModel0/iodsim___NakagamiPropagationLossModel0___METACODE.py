@@ -1,0 +1,31 @@
+from NIENV import *
+
+class %CLASS%(NodeInstance):
+    def __init__(self, params):
+        super(%CLASS%, self).__init__(params)
+
+    def update_event(self, input_called=-1):
+        d = {
+            'name': "ns3::NakagamiPropagationLossModel",
+            'attributes': []
+        }
+
+        if self.input(0): d["attributes"].append({"name": "GammaRv", "value": self.input(0)})
+        if self.input(1): d["attributes"].append({"name": "ErlangRv", "value": self.input(1)})
+        if self.input(2): d["attributes"].append({"name": "m2", "value": float(self.input(2))})
+        if self.input(3): d["attributes"].append({"name": "m1", "value": float(self.input(3))})
+        if self.input(4): d["attributes"].append({"name": "m0", "value": float(self.input(4))})
+        if self.input(5): d["attributes"].append({"name": "Distance2", "value": float(self.input(5))})
+        if self.input(6): d["attributes"].append({"name": "Distance1", "value": float(self.input(6))})
+
+        self.set_output_val(0, d)
+
+    def get_data(self):
+        data = {}
+        return data
+
+    def set_data(self, data):
+        pass
+
+    def removing(self):
+        pass
