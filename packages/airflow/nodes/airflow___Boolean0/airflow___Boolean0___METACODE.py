@@ -41,7 +41,8 @@ class %CLASS%(NodeInstance):
         return data
 
     def set_data(self, data):
-        pass
+        self.value = data['value']
+        self.main_widget.update_state(self.value)
 
     def removing(self):
         pass

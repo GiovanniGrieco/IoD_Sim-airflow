@@ -42,5 +42,9 @@ class %CLASS%(QCheckBox, MWB):
     def set_data(self, data):
         pass
 
+    def update_state(self, value):
+        self.setChecked(value)
+        state = value
+
     def remove_event(self):
         pass
