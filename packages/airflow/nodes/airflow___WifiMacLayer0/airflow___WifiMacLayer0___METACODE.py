@@ -28,11 +28,12 @@ from NIENV import *
 class %CLASS%(NodeInstance):
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
-        
 
     def update_event(self, input_called=-1):
         self.set_output_val(0, {
-            'speedCoefficients': self.input(0)
+            'type': 'wifi',
+            'ssid': self.input(0),
+            'remoteStationManager': self.input(1)
         })
 
     def get_data(self):

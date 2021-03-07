@@ -29,11 +29,16 @@ class %CLASS%(NodeInstance):
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
 
-
     def update_event(self, input_called=-1):
         self.set_output_val(0, {
-            'acceleration': float(self.input(0)),
-            'maxSpeed': float(self.input(1))
+            'type': 'wifi',
+            'standard': self.input(0),
+            'rxGain': float(self.input(1)),
+            'mode': self.input(2),
+            'channel': {
+                'propagationDelayModel': self.input(3),
+                'propagationLossModel': self.input(4)
+            }
         })
 
     def get_data(self):

@@ -29,15 +29,28 @@ class %CLASS%(NodeInstance):
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
 
+        self.key_lookup = {
+            'Name': 'name',
+            'Log on File': 'logOnFile',
+            'Duration': 'duration',
+            'Log Components': 'logComponents',
+            'Drone List': 'drones',
+            'ZSP List': 'ZSPs',
+            'Results Path': 'resultsPath',
+            'ns3 Config': 'staticNs3Config',
+            'PHY Layers': 'phyLayer',
+            'MAC Layers': 'macLayer',
+            'NET Layers': 'networkLayer'
+        }
+
         # self.special_actions['action name'] = {'method': M(self.action_method)}
         # ...
 
     def update_event(self, input_called=-1):
-        pass  # ...
+        pass
 
     def get_data(self):
-        data = {}
-        return data
+        return {self.key_lookup[x.label_str]: x.get_val() for x in self.inputs}
 
     def set_data(self, data):
         pass

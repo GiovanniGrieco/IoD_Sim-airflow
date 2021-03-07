@@ -32,7 +32,7 @@ class %CLASS%(NodeInstance):
 
     def update_event(self, input_called=-1):
         self.set_output_val(0, {
-            'key': self.input(0),
+            'name': self.input(0),
             'value': self.input(1)
         })
 

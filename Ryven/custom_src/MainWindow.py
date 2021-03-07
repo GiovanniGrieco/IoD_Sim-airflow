@@ -490,7 +490,8 @@ saving: ctrl+s
 
         # TODO try/catch
         scenario_ni = [_in for _in in self.scripts[0].flow.all_node_instances if _in.parent_node.type_ == 'Scenario'][0]
-        values = {p.label_str: p.get_val() for p in scenario_ni.inputs}
+        #values = {p.label_str: p.get_val() for p in scenario_ni.inputs}
+        values = scenario_ni.get_data()
         Debugger.debug(values)
 
         file_name = QFileDialog.getSaveFileName(self, 'select location and give file name',
@@ -507,19 +508,7 @@ saving: ctrl+s
             Debugger.debug('couldn\'t open file')
             return
 
-        key_lookup = {
-            'Log on File': 'logOnFile',
-            'Duration': 'duration',
-            'Log Components': 'logComponents',
-            'PHY Mode': 'phyMode',
-            'Propagation Loss Model': 'phyPropagationLoss',
-            'Drone Container': 'drones',
-            'ZSP Container': 'ZSPs'
-        }
-
-        mapped_dict = {key_lookup[k]: values[k] for k in key_lookup}
-
-        data = json.dumps(mapped_dict, indent=4, sort_keys=True)
+        data = json.dumps(values, indent=4, sort_keys=True)
         #Debugger.debug(data)
 
         file.write(data)

@@ -1,6 +1,7 @@
 {
     "type": "Ryven nodes package",
-    "nodes": [{
+    "nodes": [
+        {
             "title": "scenario",
             "description": "Configure an IoD Sim scenario.",
             "type": "Scenario",
@@ -9,10 +10,9 @@
             "design style": "extended",
             "color": "#3f51b5",
             "has main widget": false,
-            "custom input widgets": [
-                "PhyModeSelector"
-            ],
-            "inputs": [{
+            "custom input widgets": [],
+            "inputs": [
+                {
                     "type": "data",
                     "label": "Name",
                     "has widget": true,
@@ -40,11 +40,6 @@
                 },
                 {
                     "type": "data",
-                    "label": "Propagation Loss Model",
-                    "has widget": false
-                },
-                {
-                    "type": "data",
                     "label": "Drone List",
                     "has widget": false
                 },
@@ -60,10 +55,23 @@
                 },
                 {
                     "type": "data",
-                    "label": "PHY Mode",
-                    "has widget": true,
-                    "widget name": "PhyModeSelector",
-                    "widget position": "besides"
+                    "label": "ns3 Config",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "PHY Layers",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "MAC Layers",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "NET Layers",
+                    "has widget": false
                 }
             ],
             "outputs": []
@@ -80,10 +88,12 @@
             "widget position": "between ports",
             "custom input widgets": [],
             "inputs": [],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         },
         {
             "title": "Select Directory",
@@ -97,10 +107,12 @@
             "widget position": "between ports",
             "custom input widgets": [],
             "inputs": [],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         },
         {
             "title": "toList",
@@ -112,35 +124,19 @@
             "color": "#ffa01a",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [{
-                "type": "data",
-                "label": "",
-                "has widget": false
-            }],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
-        },
-        {
-            "title": "ZSP",
-            "description": "Create a new Zone Service Provider.",
-            "type": "ZSP",
-            "module name": "airflow___ZSP0",
-            "class name": "ZSP",
-            "design style": "extended",
-            "color": "#d50000",
-            "has main widget": false,
-            "custom input widgets": [],
-            "inputs": [{
-                "type": "data",
-                "label": "Position",
-                "has widget": false
-            }],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         },
         {
             "title": "vector",
@@ -152,7 +148,8 @@
             "color": "#c69a15",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [{
+            "inputs": [
+                {
                     "type": "data",
                     "label": "x",
                     "has widget": true,
@@ -174,54 +171,27 @@
                     "widget position": "besides"
                 }
             ],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
-        },
-        {
-            "title": "Application",
-            "description": "",
-            "type": "",
-            "module name": "airflow___Application0",
-            "class name": "Application",
-            "design style": "extended",
-            "color": "#d50000",
-            "has main widget": false,
-            "custom input widgets": [],
-            "inputs": [{
-                    "type": "data",
-                    "label": "Start Time",
-                    "has widget": true,
-                    "widget name": "std line edit m",
-                    "widget position": "besides"
-                },
+            "outputs": [
                 {
                     "type": "data",
-                    "label": "Stop Time",
-                    "has widget": true,
-                    "widget name": "std line edit m",
-                    "widget position": "besides"
+                    "label": ""
                 }
-            ],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            ]
         },
         {
-            "title": "Drone",
-            "description": "Create a new Drone Entity.",
-            "type": "Drone",
-            "module name": "airflow___Drone0",
-            "class name": "Drone",
+            "title": "Entity",
+            "description": "Create a new Entity to be simulated.",
+            "type": "Entity",
+            "module name": "airflow___Entity0",
+            "class name": "Entity",
             "design style": "extended",
             "color": "#d50000",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [{
+            "inputs": [
+                {
                     "type": "data",
-                    "label": "Application",
+                    "label": "Applications",
                     "has widget": false
                 },
                 {
@@ -231,64 +201,16 @@
                 },
                 {
                     "type": "data",
-                    "label": "Trajectory",
+                    "label": "Network Devices",
                     "has widget": false
                 }
             ],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
-        },
-        {
-            "title": "Constant Acceleration Drone Mobility Model",
-            "description": "Drone flight characterized by uniform acceleration.",
-            "type": "",
-            "module name": "airflow___ConstantAccelerationDroneMobilityModel0",
-            "class name": "ConstantAccelerationDroneMobilityModel",
-            "design style": "extended",
-            "color": "#d50000",
-            "has main widget": false,
-            "custom input widgets": [],
-            "inputs": [{
-                    "type": "data",
-                    "label": "Acceleration",
-                    "has widget": true,
-                    "widget name": "std line edit m",
-                    "widget position": "besides"
-                },
+            "outputs": [
                 {
                     "type": "data",
-                    "label": "Max Speed",
-                    "has widget": true,
-                    "widget name": "std line edit m",
-                    "widget position": "besides"
+                    "label": ""
                 }
-            ],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
-        },
-        {
-            "title": "Parametric Speed Drone Mobility Model",
-            "description": "Drone flight characterized by its velocity variable in time.",
-            "type": "",
-            "module name": "airflow___ParametricSpeedDroneMobilityModel0",
-            "class name": "ParametricSpeedDroneMobilityModel",
-            "design style": "extended",
-            "color": "#d50000",
-            "has main widget": false,
-            "custom input widgets": [],
-            "inputs": [{
-                "type": "data",
-                "label": "Speed Coefficients",
-                "has widget": false
-            }],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            ]
         },
         {
             "title": "Trajectory",
@@ -301,15 +223,19 @@
             "has main widget": true,
             "widget position": "under ports",
             "custom input widgets": [],
-            "inputs": [{
-                "type": "data",
-                "label": "POIs",
-                "has widget": false
-            }],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "POIs",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         },
         {
             "title": "Point",
@@ -321,7 +247,8 @@
             "color": "#d50000",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [{
+            "inputs": [
+                {
                     "type": "data",
                     "label": "Position",
                     "has widget": false
@@ -341,10 +268,12 @@
                     "widget position": "besides"
                 }
             ],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         },
         {
             "title": "Model",
@@ -356,7 +285,8 @@
             "color": "#d50000",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [{
+            "inputs": [
+                {
                     "type": "data",
                     "label": "Name",
                     "has widget": true,
@@ -369,10 +299,12 @@
                     "has widget": false
                 }
             ],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         },
         {
             "title": "Attribute",
@@ -384,7 +316,8 @@
             "color": "#d50000",
             "has main widget": false,
             "custom input widgets": [],
-            "inputs": [{
+            "inputs": [
+                {
                     "type": "data",
                     "label": "Name",
                     "has widget": true,
@@ -399,10 +332,160 @@
                     "widget position": "besides"
                 }
             ],
-            "outputs": [{
-                "type": "data",
-                "label": ""
-            }]
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "WiFi PHY Layer",
+            "description": "Represent a PHY Layer compatible with the IEEE 802.11 family.",
+            "type": "WifiPhyLayer",
+            "module name": "airflow___WifiPhyLayer0",
+            "class name": "WifiPhyLayer",
+            "design style": "extended",
+            "color": "#000000",
+            "has main widget": false,
+            "custom input widgets": [
+                "WifiStandardSelector",
+                "PhyModeSelector"
+            ],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Standard",
+                    "has widget": true,
+                    "widget name": "WifiStandardSelector",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Rx Gain",
+                    "has widget": true,
+                    "widget name": "std line edit m r",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Mode",
+                    "has widget": true,
+                    "widget name": "PhyModeSelector",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Propagation Delay Model",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Propagation Loss Model",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "WiFi MAC Layer",
+            "description": "Represent a MAC Layer compatible with the IEEE 802.11 family.",
+            "type": "WifiMacLayer",
+            "module name": "airflow___WifiMacLayer0",
+            "class name": "WifiMacLayer",
+            "design style": "extended",
+            "color": "#000000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "SSID",
+                    "has widget": true,
+                    "widget name": "std line edit m r",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Remote Station Manager",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "IPv4 Network Layer",
+            "description": "Represent an IPv4-based network.",
+            "type": "Ipv4NetworkLayer",
+            "module name": "airflow___Ipv4NetworkLayer0",
+            "class name": "Ipv4NetworkLayer",
+            "design style": "extended",
+            "color": "#000000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Address",
+                    "has widget": true,
+                    "widget name": "std line edit m r",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Mask",
+                    "has widget": true,
+                    "widget name": "std line edit m r",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "WiFi Net Device",
+            "description": "Represent a WiFi-based Network Device to be installed on an Entity.",
+            "type": "WifiNetDevice",
+            "module name": "airflow___WifiNetDevice0",
+            "class name": "WifiNetDevice",
+            "design style": "extended",
+            "color": "#000000",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "MAC Layer",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "NET Layer ID",
+                    "has widget": true,
+                    "widget name": "std spin box",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
         }
     ]
 }

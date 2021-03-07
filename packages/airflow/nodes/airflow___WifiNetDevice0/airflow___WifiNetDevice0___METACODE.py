@@ -29,12 +29,11 @@ class %CLASS%(NodeInstance):
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
 
-
     def update_event(self, input_called=-1):
         self.set_output_val(0, {
-            'application': self.input(0),
-            'mobilityModel': self.input(1),
-            'trajectory': self.input(2)
+            'type': 'wifi',
+            "macLayer": self.input(0),
+            "networkLayer": self.input(1)
         })
 
     def get_data(self):

@@ -31,7 +31,9 @@ class %CLASS%(NodeInstance):
 
     def update_event(self, input_called=-1):
         self.set_output_val(0, {
-            "position": self.input(0)
+            'type': 'ipv4',
+            'address': self.input(0),
+            'mask': self.input(1)
         })
 
     def get_data(self):
