@@ -33,7 +33,7 @@ class %CLASS%(NodeInstance):
         # ...
 
     def update_event(self, input_called=-1):
-        self.set_output_val(0, [_in.get_val() for _in in self.inputs])
+        self.set_output_val(0, [float(_in.get_val()) for _in in self.inputs])
 
     def get_data(self):
         data = {}
