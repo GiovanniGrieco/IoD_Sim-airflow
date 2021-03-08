@@ -177,7 +177,7 @@ class Ui_MainWindow(object):
 "The more you zoomed in, the sharper the picture.\n"
 "This will take a few seconds.", None))
 #endif // QT_CONFIG(tooltip)
-        self.scripts_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Scripts", None))
+        self.scripts_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Console", None))
         self.new_script_name_lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"script title", None))
         self.add_new_script_pushButton.setText(QCoreApplication.translate("MainWindow", u"add new", None))
         self.scripts_tab_widget.setTabText(self.scripts_tab_widget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))

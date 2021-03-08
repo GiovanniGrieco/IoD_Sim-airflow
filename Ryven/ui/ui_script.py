@@ -62,8 +62,11 @@ class Ui_script_widget(object):
         sizePolicy.setHeightForWidth(self.contents_widget.sizePolicy().hasHeightForWidth())
         self.contents_widget.setSizePolicy(sizePolicy)
         self.contents_widget.setMinimumSize(QSize(200, 0))
+
         self.verticalLayout = QVBoxLayout(self.contents_widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
+
+        # Settings Box Layout
         self.settings_groupBox = QGroupBox(self.contents_widget)
         self.settings_groupBox.setObjectName(u"settings_groupBox")
         self.verticalLayout_4 = QVBoxLayout(self.settings_groupBox)
@@ -130,6 +133,23 @@ class Ui_script_widget(object):
         self.verticalLayout_4.addLayout(self.horizontalLayout)
 
 
+        self.horizontalLayout_IoDSimLocation = QHBoxLayout()
+
+        # IoD Sim Location Label
+        self.horizontalLayout_IoDSimLocation.setObjectName(u"horizontalLayout")
+        self.label_IoDSimLocation = QLabel(self.settings_groupBox)
+        self.label_IoDSimLocation.setObjectName(u"label_IoDSimLocation")
+        self.horizontalLayout_IoDSimLocation.addWidget(self.label_IoDSimLocation)
+
+        # IoD Sim Location Button
+        self.pushButton_IoDSimLocation = QPushButton(self.settings_groupBox)
+        self.pushButton_IoDSimLocation.setObjectName(u"pushButton_IoDSimLocation")
+
+        self.horizontalLayout_IoDSimLocation.addWidget(self.pushButton_IoDSimLocation)
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_IoDSimLocation)
+        # / IoD Sim Location
+
         self.verticalLayout.addWidget(self.settings_groupBox)
 
         self.variables_group_box = QGroupBox(self.contents_widget)
@@ -163,6 +183,25 @@ class Ui_script_widget(object):
 
         self.gridLayout_4.addWidget(self.splitter_3, 0, 0, 1, 1)
 
+        # IoD Sim Toolbox
+        self.groupBox_IoDSimTools = QGroupBox(self.contents_widget)
+        self.groupBox_IoDSimTools.setObjectName(u"groupBox_IoDSimTools")
+
+        self.gridLayout_IoDSimTools = QGridLayout(self.groupBox_IoDSimTools)
+        self.gridLayout_IoDSimTools.setObjectName(u"gridLayout_IoDSimTools")
+
+        # Build Button
+        self.button_Build_IoDSimTools = QPushButton(self.groupBox_IoDSimTools)
+        self.button_Build_IoDSimTools.setObjectName(u"button_Build_IoDSimTools")
+        self.gridLayout_IoDSimTools.addWidget(self.button_Build_IoDSimTools, 0, 0, 1, 1)
+
+        # Run Button
+        self.button_Run_IoDSimTools = QPushButton(self.groupBox_IoDSimTools)
+        self.button_Run_IoDSimTools.setObjectName(u"button_Run_IoDSimTools")
+        self.gridLayout_IoDSimTools.addWidget(self.button_Run_IoDSimTools, 1, 0, 1, 1)
+
+        self.verticalLayout.addWidget(self.groupBox_IoDSimTools)
+        # / IoD Sim Toolbox
 
         self.retranslateUi(script_widget)
 
@@ -180,8 +219,13 @@ class Ui_script_widget(object):
         self.label.setText(QCoreApplication.translate("script_widget", u"Viewport Update Mode", None))
         self.viewport_update_mode_sync_radioButton.setText(QCoreApplication.translate("script_widget", u"Sync", None))
         self.viewport_update_mode_async_radioButton.setText(QCoreApplication.translate("script_widget", u"Async", None))
+        self.label_IoDSimLocation.setText(QCoreApplication.translate("script_widget", u"IoD Sim Location", None))
+        self.pushButton_IoDSimLocation.setText(QCoreApplication.translate("script_widget", u"Select Dir", None))
         self.variables_group_box.setTitle(QCoreApplication.translate("script_widget", u"Variables", None))
         self.add_variable_push_button.setText(QCoreApplication.translate("script_widget", u"add", None))
         self.new_var_name_lineEdit.setPlaceholderText(QCoreApplication.translate("script_widget", u"new var name", None))
+        self.groupBox_IoDSimTools.setTitle(QCoreApplication.translate("script_widget", u"IoD Sim Tools", None))
+        self.button_Build_IoDSimTools.setText(QCoreApplication.translate("script_widget", u"Build", None))
+        self.button_Run_IoDSimTools.setText(QCoreApplication.translate("script_widget", u"Run", None))
     # retranslateUi
 
