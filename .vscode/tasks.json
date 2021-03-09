@@ -20,7 +20,7 @@
             "command": "${config:python.pythonPath}",
             "args": ["Ryven NodeManager.py"],
             "options": {
-                "cwd": "${workspaceFolder}/third-party/Ryven/Ryven_NodeManager/"
+                "cwd": "${workspaceFolder}/Ryven_NodeManager/"
             },
             "group": "test",
             "presentation": {
