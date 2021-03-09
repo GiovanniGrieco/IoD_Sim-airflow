@@ -105,7 +105,7 @@ class DesignContainer(QObject):
                   2,
                   Qt.DashLine,
                   NIPainter_Easy,
-                  QColor('#212429')),
+                  QColor('#3c3c3c')),
         FlowTheme('peasy',
                   QColor('#989c9f'),
                   2,
@@ -114,22 +114,22 @@ class DesignContainer(QObject):
                   2,
                   Qt.DashLine,
                   NIPainter_Peasy,
-                  QColor('#3f4044')),
+                  QColor('#1e1e1e')),
         FlowTheme('ueli',
                   QColor('#989c9f'),
                   2,
                   Qt.SolidLine,
-                  QColor('#989c9f'),
+                  QColor('#ffffff'),
                   2,
                   Qt.DashLine,
                   NIPainter_Ueli,
-                  QColor('#3f4044'))
+                  QColor('#1e1e1e'))
     ]
 
     start_flow_theme = flow_themes[-1]
     flow_theme = None  # initialized by MainWindow
     flow_theme_changed = Signal(str)
-    performance_mode = 'fast'
+    performance_mode = 'pretty'
 
     def set_flow_theme(self, new_theme: str = None):
         self.flow_theme = new_theme if new_theme is not None else self.start_flow_theme

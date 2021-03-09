@@ -97,7 +97,7 @@ class NIPainter_DarkStd(NIPainter):
 
     def paint_PI_label(painter, option, exec_type, connected, label_str, node_color, bounding_rect):
         c = QColor('#FFFFFF')
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Bold), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -209,7 +209,7 @@ class NIPainter_DarkTron(NIPainter):
             c = QColor('#FFFFFF')
         else:
             c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Bold), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -368,7 +368,7 @@ class NIPainter_Ghostly(NIPainter):
             c = QColor('#FFFFFF')
         else:
             c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Bold), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -502,7 +502,7 @@ class NIPainter_Blender(NIPainter):
             c = QColor('#FFFFFF')
         else:
             c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Bold), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -602,18 +602,18 @@ class NIPainter_Easy(NIPainter):
     def paint_PI_label(painter, option, exec_type, connected, label_str, node_color, bounding_rect):
         c = None
         if not connected:
-            c = QColor('#53585c')
+            c = QColor('#797e82')
         else:
             if exec_type == 'exec':
                 c = QColor('#cccccc')
             else:
                 c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Courier New", 10, QFont.Bold), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("source code pro", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
         color = None
         if not connected:
-            color = QColor('#53585c')
+            color = QColor('#797e82')
         else:
             if exec_type == 'exec':
                 color = QColor('#dddddd')
@@ -715,18 +715,18 @@ class NIPainter_Peasy(NIPainter):
     def paint_PI_label(painter, option, exec_type, connected, label_str, node_color, bounding_rect):
         c = None
         if not connected:
-            c = QColor('#53585c')
+            c = QColor('#797e82')
         else:
             if exec_type == 'exec':
                 c = QColor('#cccccc')
             else:
                 c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Courier New", 10, QFont.Bold), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("source code pro", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
         color = None
         if not connected:
-            color = QColor('#53585c')
+            color = QColor('#797e82')
         else:
             if exec_type == 'exec':
                 color = QColor('#dddddd')
@@ -778,7 +778,7 @@ class NIPainter_Peasy(NIPainter):
         :param title_rect: NI's title label's bounding rect
         """
 
-        background_color = QColor('#212429')
+        background_color = QColor('#3c3c3c')
         header_color = c
 
         rel_header_height = NIPainter.get_header_rect(w, h, title_rect).height()/h
@@ -792,7 +792,7 @@ class NIPainter_Peasy(NIPainter):
         painter.setPen(Qt.NoPen) #QPen(c.darker()))
         painter.drawRoundedRect(bounding_rect, 9, 9)
 
-    def draw_NI_minimalistic(painter, c, w, h, bounding_rect, background_color=QColor('#212429')):
+    def draw_NI_minimalistic(painter, c, w, h, bounding_rect, background_color=QColor('#3c3c3c')):
         """
         :param painter: painter from paint event
         :param c_s: corner size/corner radius
@@ -825,18 +825,18 @@ class NIPainter_Ueli(NIPainter):
     def paint_PI_label(painter, option, exec_type, connected, label_str, node_color, bounding_rect):
         c = None
         if not connected:
-            c = QColor('#53585c')
+            c = QColor('#797e82')
         else:
             if exec_type == 'exec':
                 c = QColor('#cccccc')
             else:
                 c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Courier New", 10, QFont.Bold), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("source code pro", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
         color = None
         if not connected:
-            color = QColor('#53585c')
+            color = QColor('#797e82')
         else:
             if exec_type == 'exec':
                 color = QColor('#dddddd')
@@ -888,7 +888,7 @@ class NIPainter_Ueli(NIPainter):
         :param title_rect: NI's title label's bounding rect
         """
 
-        background_color = QColor('#212429')
+        background_color = QColor('#3c3c3c')
         header_color = c
 
         header_height = NIPainter.get_header_rect(w, h, title_rect).height()
@@ -906,7 +906,7 @@ class NIPainter_Ueli(NIPainter):
             bounding_rect.bottomRight()
         ), 6, 6)
 
-    def draw_NI_minimalistic(painter, c, w, h, bounding_rect, background_color=QColor('#212429')):
+    def draw_NI_minimalistic(painter, c, w, h, bounding_rect, background_color=QColor('#3c3c3c')):
         """
         :param painter: painter from paint event
         :param c_s: corner size/corner radius

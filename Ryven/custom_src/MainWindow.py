@@ -79,9 +79,9 @@ class MainWindow(QMainWindow):
 
         # UI
         self.scripts_list_widget = ScriptsListWidget(self, self.scripts)
-        self.ui.scripts_scrollArea.setWidget(self.scripts_list_widget)
-        self.ui.add_new_script_pushButton.clicked.connect(self.create_new_script_button_pressed)
-        self.ui.new_script_name_lineEdit.returnPressed.connect(self.create_new_script_LE_return_pressed)
+        #self.ui.scripts_scrollArea.setWidget(self.scripts_list_widget)
+        #self.ui.add_new_script_pushButton.clicked.connect(self.create_new_script_button_pressed)
+        #self.ui.new_script_name_lineEdit.returnPressed.connect(self.create_new_script_LE_return_pressed)
 
 
         if config['config'] == 'create plain new project':

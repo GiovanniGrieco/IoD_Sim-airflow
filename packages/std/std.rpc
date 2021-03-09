@@ -8,7 +8,7 @@
             "module name": "std___ForNDim0",
             "class name": "ForNDim",
             "design style": "extended",
-            "color": "#ff0004",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -49,7 +49,7 @@
             "module name": "std___Print0",
             "class name": "Print",
             "design style": "extended",
-            "color": "#8077ff",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -79,7 +79,7 @@
             "module name": "std___Slider0",
             "class name": "Slider",
             "design style": "minimalistic",
-            "color": "#3b9cd9",
+            "color": "#fdd835",
             "has main widget": true,
             "widget position": "between ports",
             "custom input widgets": [],
@@ -98,7 +98,7 @@
             "module name": "std___Plus0",
             "class name": "Plus",
             "design style": "minimalistic",
-            "color": "#2fd97c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -131,7 +131,7 @@
             "module name": "std___Minus0",
             "class name": "Minus",
             "design style": "minimalistic",
-            "color": "#2fd97c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -164,7 +164,7 @@
             "module name": "std___Times0",
             "class name": "Times",
             "design style": "minimalistic",
-            "color": "#2fd97c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -197,7 +197,7 @@
             "module name": "std___Divided0",
             "class name": "Divided",
             "design style": "minimalistic",
-            "color": "#2fd97c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -230,7 +230,7 @@
             "module name": "std___Length0",
             "class name": "Length",
             "design style": "minimalistic",
-            "color": "#4c4fe5",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -254,7 +254,7 @@
             "module name": "std___Button0",
             "class name": "Button",
             "design style": "extended",
-            "color": "#d9a405",
+            "color": "#fdd835",
             "has main widget": true,
             "widget position": "between ports",
             "custom input widgets": [],
@@ -273,7 +273,7 @@
             "module name": "std___ForEach0",
             "class name": "ForEach",
             "design style": "extended",
-            "color": "#ff0004",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -309,7 +309,7 @@
             "module name": "std___If0",
             "class name": "If",
             "design style": "extended",
-            "color": "#ff0004",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -343,7 +343,7 @@
             "module name": "std___While0",
             "class name": "While",
             "design style": "extended",
-            "color": "#ff0004",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -373,7 +373,7 @@
             "module name": "std___Greater0",
             "class name": "Greater",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -406,7 +406,7 @@
             "module name": "std___Smaller0",
             "class name": "Smaller",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -439,7 +439,7 @@
             "module name": "std___Equal0",
             "class name": "Equal",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -472,7 +472,7 @@
             "module name": "std___Unequal0",
             "class name": "Unequal",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -505,7 +505,7 @@
             "module name": "std___Not0",
             "class name": "Not",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -529,7 +529,7 @@
             "module name": "std___And0",
             "class name": "And",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -562,7 +562,7 @@
             "module name": "std___Or0",
             "class name": "Or",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -595,7 +595,7 @@
             "module name": "std___GreaterOrEqual0",
             "class name": "GreaterOrEqual",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -628,7 +628,7 @@
             "module name": "std___LessOrEqual0",
             "class name": "LessOrEqual",
             "design style": "minimalistic",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -661,7 +661,7 @@
             "module name": "std___Clock0",
             "class name": "Clock",
             "design style": "extended",
-            "color": "#3b9cd9",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [
                 "TimeDelaySlider"
@@ -689,7 +689,7 @@
             "module name": "std___Inc0",
             "class name": "Inc",
             "design style": "minimalistic",
-            "color": "#d96111",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -723,7 +723,7 @@
             "module name": "std___Decr0",
             "class name": "Decr",
             "design style": "minimalistic",
-            "color": "#d96111",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -757,7 +757,7 @@
             "module name": "std___Log0",
             "class name": "Log",
             "design style": "extended",
-            "color": "#8077ff",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [
                 "LogTargetComboBox"
@@ -789,7 +789,7 @@
             "module name": "std___ArrGet0",
             "class name": "ArrGet",
             "design style": "minimalistic",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -822,7 +822,7 @@
             "module name": "std___ArrAppend0",
             "class name": "ArrAppend",
             "design style": "extended",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -863,7 +863,7 @@
             "module name": "std___ArrInsert0",
             "class name": "ArrInsert",
             "design style": "extended",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -911,7 +911,7 @@
             "module name": "std___WithFileOpen0",
             "class name": "WithFileOpen",
             "design style": "extended",
-            "color": "#5877de",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [
                 "ChooseFileInputWidget"
@@ -954,7 +954,7 @@
             "module name": "std___WriteToFile0",
             "class name": "WriteToFile",
             "design style": "extended",
-            "color": "#5877de",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -989,7 +989,7 @@
             "module name": "std___ReadFile0",
             "class name": "ReadFile",
             "design style": "extended",
-            "color": "#2f4fd9",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1021,7 +1021,7 @@
             "module name": "std___ArrIn0",
             "class name": "ArrIn",
             "design style": "minimalistic",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1054,7 +1054,7 @@
             "module name": "std___ExtractProperty0",
             "class name": "ExtractProperty",
             "design style": "extended",
-            "color": "#be9220",
+            "color": "#fdd835",
             "has main widget": true,
             "widget position": "under ports",
             "custom input widgets": [],
@@ -1079,7 +1079,7 @@
             "module name": "std___Round0",
             "class name": "Round",
             "design style": "minimalistic",
-            "color": "#4c4fe5",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1103,7 +1103,7 @@
             "module name": "std___ArrIndex0",
             "class name": "ArrIndex",
             "design style": "extended",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1136,7 +1136,7 @@
             "module name": "std___ArrRemove0",
             "class name": "ArrRemove",
             "design style": "extended",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1177,7 +1177,7 @@
             "module name": "std___ArrSetAt0",
             "class name": "ArrSetAt",
             "design style": "extended",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1225,7 +1225,7 @@
             "module name": "std___In0",
             "class name": "In",
             "design style": "extended",
-            "color": "#d9292c",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1258,7 +1258,7 @@
             "module name": "std___Checkpoint0",
             "class name": "Checkpoint",
             "design style": "minimalistic",
-            "color": "#ffa01a",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1282,7 +1282,7 @@
             "module name": "std___SwapArrElements0",
             "class name": "SwapArrElements",
             "design style": "extended",
-            "color": "#b5ee2d",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1330,7 +1330,7 @@
             "module name": "std___Str0",
             "class name": "Str",
             "design style": "minimalistic",
-            "color": "#4c4fe5",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1354,7 +1354,7 @@
             "module name": "std___Int0",
             "class name": "Int",
             "design style": "minimalistic",
-            "color": "#4c4fe5",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1378,7 +1378,7 @@
             "module name": "std___Float0",
             "class name": "Float",
             "design style": "minimalistic",
-            "color": "#4c4fe5",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1402,7 +1402,7 @@
             "module name": "std___List0",
             "class name": "List",
             "design style": "minimalistic",
-            "color": "#4c4fe5",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1426,7 +1426,7 @@
             "module name": "std___DoWhile0",
             "class name": "DoWhile",
             "design style": "extended",
-            "color": "#ff0004",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1456,7 +1456,7 @@
             "module name": "std___MakeComplex0",
             "class name": "MakeComplex",
             "design style": "extended",
-            "color": "#2bc872",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -1489,7 +1489,7 @@
             "module name": "std___BreakComplex0",
             "class name": "BreakComplex",
             "design style": "extended",
-            "color": "#2bc872",
+            "color": "#fdd835",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [

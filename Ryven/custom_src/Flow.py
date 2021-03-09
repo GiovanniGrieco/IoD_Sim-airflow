@@ -147,19 +147,19 @@ class Flow(QGraphicsView):
             # algorithm mode
             if config.keys().__contains__('algorithm mode'):
                 if config['algorithm mode'] == 'data flow':
-                    self.parent_script.widget.ui.algorithm_data_flow_radioButton.setChecked(True)
+                    #self.parent_script.widget.ui.algorithm_data_flow_radioButton.setChecked(True)
                     self.algorithm_mode.mode_data_flow = True
                 else:  # 'exec flow'
-                    self.parent_script.widget.ui.algorithm_exec_flow_radioButton.setChecked(True)
+                    #self.parent_script.widget.ui.algorithm_exec_flow_radioButton.setChecked(True)
                     self.algorithm_mode.mode_data_flow = False
 
             # viewport update mode
             if config.keys().__contains__('viewport update mode'):
                 if config['viewport update mode'] == 'sync':
-                    self.parent_script.widget.ui.viewport_update_mode_sync_radioButton.setChecked(True)
+                    #self.parent_script.widget.ui.viewport_update_mode_sync_radioButton.setChecked(True)
                     self.viewport_update_mode.sync = True
                 else:  # 'async'
-                    self.parent_script.widget.ui.viewport_update_mode_async_radioButton.setChecked(True)
+                    #self.parent_script.widget.ui.viewport_update_mode_async_radioButton.setChecked(True)
                     self.viewport_update_mode.sync = False
 
             node_instances = self.place_nodes_from_config(config['nodes'])

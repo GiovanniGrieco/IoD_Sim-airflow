@@ -1,3 +1,5 @@
+import os
+
 from PySide2.QtWidgets import QDialog, QVBoxLayout, QHBoxLayout, QPushButton, QTextEdit, QFileDialog, QWidget
 from PySide2.QtGui import QIcon
 
@@ -16,22 +18,13 @@ class StartupDialog(QDialog):
         info_text_edit.setHtml('''
             <h2 style="font-family: Courier New; font-size: xx-large; color: #a9d5ef;">Welcome to Ryven</h2>
             <div style="font-family: Corbel; font-size: large;">
-            
-            <p><img style="float:right;" height=150 src="../resources/pics/program_icon2_light.png">Hi,
-            I am Leon, the creator of Ryven. Please always keep in mind, that this
-            is not a professional piece of software. Don\'t forget to save! :)
-            I am sure there are bugs and problems but as long as you keep behaving
-            as intended, you shouldn\'t get into too much trouble.
-            <br>
-            Note that this software uses Qt
-            which is not free for commercial use. All rights remain to their lawful owners.
-            All Ryven source code is written by me.
-            <br>
-            Enjoy!</p>
-            <br>
-            <br>
-            Please select a mode to start the editor with. You can either create a plain new
-            project, or you can load a saved one.
+
+            <p>
+            This version of Ryven has been heavily modified and integrated with IoD Sim.</p>
+
+            <p>The original version of Ryven is made by Leon Thomm.</p>
+
+            <p>Extensions for IoD Sim are made by Giovanni Grieco and Sara Galasso.</p>
             </div>
         ''')
         info_text_edit.setReadOnly(True)
@@ -54,7 +47,7 @@ class StartupDialog(QDialog):
 
         self.setWindowTitle('Ryven')
         self.setWindowIcon(QIcon('../resources/pics/program_icon2.png'))
-        self.setFixedSize(500, 280)
+        self.setFixedSize(500, 200)
 
         self.load_stylesheet('dark')
 
@@ -114,9 +107,23 @@ class StartupDialog(QDialog):
 
 
         if len(packages) > 0:
-            select_packages_dialog = SelectPackages_Dialog(self, packages)
-            select_packages_dialog.exec_()
-            package_file_paths = select_packages_dialog.file_paths
+            #select_packages_dialog = SelectPackages_Dialog(self, packages)
+            #select_packages_dialog.exec_()
+            #package_file_paths = select_packages_dialog.file_paths
+
+            ## From Auto Import
+            packages_dir = '../packages'
+            package_file_paths = []
+            folders_list = [x[0] for x in os.walk(packages_dir) if
+                            os.path.basename(os.path.normpath(x[0])) in packages]
+
+            required_files = packages.copy()
+
+            for folder in folders_list:
+                for r_f in required_files:
+                    if r_f + '.rpc' in os.listdir(packages_dir + '/' + folder):
+                        package_file_paths.append(os.path.normpath(packages_dir + '/' + folder + '/' + r_f + '.rpc'))
+                        break
 
 
         self.editor_startup_configuration['required packages'] = package_file_paths
