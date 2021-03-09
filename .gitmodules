@@ -1,9 +1,0 @@
-[submodule "third-party/Ryven"]
-	path = third-party/Ryven
-	url = https://github.com/leon-thomm/Ryven
-[submodule "third-party/logic-node-editor"]
-	path = third-party/logic-node-editor
-	url = https://github.com/bhowiebkr/logic-node-editor
-[submodule "third-party/xod"]
-	path = third-party/xod
-	url = https://github.com/xodio/xod
