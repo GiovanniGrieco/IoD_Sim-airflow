@@ -485,7 +485,7 @@ saving: ctrl+s
         if file_name != '':
             self.save_project(file_name)
 
-    def on_export_scenario_triggered(self):
+    def on_export_scenario_triggered(self, file_path=None, is_dry_run=False):
         import json
 
         # TODO try/catch
@@ -494,16 +494,20 @@ saving: ctrl+s
         values = scenario_ni.get_data()
         Debugger.debug(values)
 
-        file_name = QFileDialog.getSaveFileName(self, 'select location and give file name',
-                                                '../saves', 'JSON File(*.json)')[0]
-        if file_name == '':
-            return
+        if file_path is None:
+            file_path = QFileDialog.getSaveFileName(self, 'select location and give file name',
+                                                    '../saves', 'JSON File(*.json)')[0]
+            if file_path == '':
+                return
+
+        if is_dry_run:
+            values['dryRun'] = True
 
         file = None
         try:
-            if os.path.exists(file_name):
-                os.remove(file_name)
-            file = open(file_name, 'w')
+            if os.path.exists(file_path):
+                os.remove(file_path)
+            file = open(file_path, 'w')
         except FileNotFoundError:
             Debugger.debug('couldn\'t open file')
             return

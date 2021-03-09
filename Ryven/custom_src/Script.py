@@ -1,4 +1,12 @@
-from PySide2.QtCore import QObject, Signal
+# stdlib
+import os
+import subprocess
+import tempfile
+from sys import platform
+
+# Qt
+from PySide2.QtCore import QFile, QObject, Signal
+from PySide2.QtWidgets import QFileDialog, QMessageBox
 
 # UI
 from custom_src.code_gen.CodeGenerator import CodeGenerator
@@ -8,7 +16,7 @@ from custom_src.Flow import Flow
 from custom_src.Log import Logger
 from custom_src.script_variables.VarsManager import VarsManager
 from custom_src.source_code_preview.CodePreview_Widget import CodePreview_Widget
-
+from custom_src.global_tools.Debugger import Debugger
 
 class Script(QObject):
 
@@ -47,6 +55,13 @@ class Script(QObject):
         # flow
         self.widget.ui.splitter.insertWidget(0, self.flow)
 
+        # IoD Sim Toolbox
+        self.tmp_dir = tempfile.mkdtemp()
+        self.iodsim_location = None
+        self.widget.ui.pushButton_IoDSimLocation.clicked.connect(self.set_iodsim_location_clicked)
+        self.widget.ui.button_Build_IoDSimTools.clicked.connect(self.build_iodsim_scenario_clicked)
+        self.widget.ui.button_Run_IoDSimTools.clicked.connect(self.run_iodsim_scenario_clicked)
+
         # code preview
         self.widget.ui.source_code_groupBox.layout().addWidget(self.code_preview_widget)
 
@@ -84,3 +99,94 @@ class Script(QObject):
                        'flow': self.flow.config_data()}
 
         return script_dict
+
+    def set_iodsim_location_clicked(self):
+        dir_name = QFileDialog.getExistingDirectory(None, "Select IoD Sim Location",
+                                                    "~/",
+                                                    QFileDialog.ShowDirsOnly | QFileDialog.DontResolveSymlinks)
+        self.iodsim_location = dir_name
+        Debugger.debug(f'IoD Sim Location set to {self.iodsim_location}')
+
+    def build_iodsim_scenario_clicked(self):
+        if self.iodsim_location is not None:
+            scenario_config_path = self.get_temp_file('dry_run.json')
+            self.main_window.on_export_scenario_triggered(scenario_config_path, is_dry_run=True)
+            self.run_iodsim(scenario_config_path)
+        else:
+            QMessageBox.warning(self.main_window, 'Error', 'Please select IoD Sim Location first!')
+
+    def run_iodsim_scenario_clicked(self):
+        if self.iodsim_location is not None:
+            scenario_config_path = self.get_temp_file('scenario.json')
+            self.main_window.on_export_scenario_triggered(scenario_config_path)
+            self.run_iodsim(scenario_config_path)
+        else:
+            QMessageBox.warning(self.main_window, 'Error', 'Please select IoD Sim Location first!')
+
+    def get_temp_file(self, file_name):
+        tmp_file_path = os.path.join(self.tmp_dir, file_name)
+        tmp_file_path = tmp_file_path.replace('\\', '\\\\')
+        Debugger.debug('Will save tmp file in', tmp_file_path)
+
+        return tmp_file_path
+
+    def run_iodsim(self, scenario_config_path):
+        # Check if we are under Linux or Windows
+        if platform == "linux" or platform == "linux2":
+            try:
+                ret = subprocess.run(f'./waf --run \"iod-sim --config={scenario_config_path}\"',
+                                        cwd=f'{self.iodsim_location}/ns3/',
+                                        capture_output=True,
+                                        check=True)
+
+                print('\nIoD Sim Build SUMMARY',
+                      '\n=====================\n',
+                      ret.stdout.decode())
+            except subprocess.TimeoutExpired as e:
+                QMessageBox.warning(self.main_window, 'Error', f'Timeout while running IoD Sim: {e.stderr}')
+                Debugger.debug(e.output.decode())
+                Debugger.debugerr(e.stderr.decode())
+            except subprocess.CalledProcessError as e:
+                QMessageBox.warning(self.main_window, 'Error', f'An error occurred while running IoD Sim: {e.stderr}')
+                Debugger.debug(e.output.decode())
+                Debugger.debugerr(e.stderr.decode())
+        elif platform == "win32":
+            if '//wsl$/' in self.iodsim_location:
+                try:
+                    ret = subprocess.run(f'wsl wslpath {self.iodsim_location}',
+                                            capture_output=True,
+                                            check=True)
+                    iodsim_linux_path = ret.stdout.decode().strip()
+
+                    ret = subprocess.run(f'wsl wslpath {scenario_config_path}',
+                                            capture_output=True,
+                                            check=True)
+                    config_linux_path = ret.stdout.decode().strip()
+
+                    try:
+                        ret = subprocess.run(f'bash -c "cd {iodsim_linux_path}/ns3 && '
+                                             f'./waf --run \'iod-sim --config={config_linux_path}\'',
+                                             capture_output=True,
+                                             check=True)
+
+                        print('\nIoD Sim Run SUMMARY',
+                              '\n===================\n',
+                              ret.stdout.decode())
+                    except subprocess.TimeoutExpired as e:
+                        QMessageBox.warning(self.main_window, 'Error', f'Timeout while running IoD Sim: {e.stderr.decode()}')
+                        Debugger.debug(e.output.decode())
+                        Debugger.debugerr(e.stderr.decode())
+                    except subprocess.CalledProcessError as e:
+                        QMessageBox.warning(self.main_window, 'Error', f'An error occurred while running IoD Sim: {e.stderr.decode()}')
+                        Debugger.debug(e.output.decode())
+                        Debugger.debugerr(e.stderr.decode())
+                except subprocess.CalledProcessError as e:
+                    QMessageBox.warning(self.main_window, 'Error', 'Failed to run WSL. Please make sure WSL is correctly installed.')
+                    Debugger.debug(e.stdout.decode())
+                    Debugger.debugerr(e.stderr.decode())
+            else:
+                Debugger.debugerr(f'Invalid IoD Sim Path: {self.iodsim_location}')
+                QMessageBox.warning(self.main_window, 'Error', 'Windows is only supported with WSL enabled. '
+                                        'Please provide a valid WSL path to reach IoD Sim.')
+        elif platform == "darwin":
+            QMessageBox.warning(self.main_window, 'Error', 'macOS is not supported, yet. Please use Linux or Windows OS.')
