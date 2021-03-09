@@ -1,5 +1,6 @@
 # stdlib
 import os
+import re
 import subprocess
 import tempfile
 from sys import platform
@@ -111,7 +112,7 @@ class Script(QObject):
         if self.iodsim_location is not None:
             scenario_config_path = self.get_temp_file('dry_run.json')
             self.main_window.on_export_scenario_triggered(scenario_config_path, is_dry_run=True)
-            self.run_iodsim(scenario_config_path)
+            self.run_iodsim('Build', scenario_config_path)
         else:
             QMessageBox.warning(self.main_window, 'Error', 'Please select IoD Sim Location first!')
 
@@ -119,7 +120,7 @@ class Script(QObject):
         if self.iodsim_location is not None:
             scenario_config_path = self.get_temp_file('scenario.json')
             self.main_window.on_export_scenario_triggered(scenario_config_path)
-            self.run_iodsim(scenario_config_path)
+            self.run_iodsim('Build', scenario_config_path)
         else:
             QMessageBox.warning(self.main_window, 'Error', 'Please select IoD Sim Location first!')
 
@@ -130,7 +131,7 @@ class Script(QObject):
 
         return tmp_file_path
 
-    def run_iodsim(self, scenario_config_path):
+    def run_iodsim(self, operation, scenario_config_path):
         # Check if we are under Linux or Windows
         if platform == "linux" or platform == "linux2":
             try:
@@ -139,15 +140,17 @@ class Script(QObject):
                                         capture_output=True,
                                         check=True)
 
-                print('\nIoD Sim Build SUMMARY',
-                      '\n=====================\n',
-                      ret.stdout.decode())
+                print(f'\nIoD Sim {operation} SUMMARY\n{ret.stdout.decode()}')
             except subprocess.TimeoutExpired as e:
-                QMessageBox.warning(self.main_window, 'Error', f'Timeout while running IoD Sim: {e.stderr}')
+                QMessageBox.warning(self.main_window, 'Error', f'Timeout while running IoD Sim: {e.stderr.decode()}')
                 Debugger.debug(e.output.decode())
                 Debugger.debugerr(e.stderr.decode())
             except subprocess.CalledProcessError as e:
-                QMessageBox.warning(self.main_window, 'Error', f'An error occurred while running IoD Sim: {e.stderr}')
+                msg = e.stderr.decode()
+                if 'msg=' in msg:
+                    msg = re.compile(r'msg="(.*)", file=').search(msg).group(1)
+
+                QMessageBox.warning(self.main_window, 'Error', f'An error occurred while running IoD Sim: {msg}')
                 Debugger.debug(e.output.decode())
                 Debugger.debugerr(e.stderr.decode())
         elif platform == "win32":
@@ -169,15 +172,17 @@ class Script(QObject):
                                              capture_output=True,
                                              check=True)
 
-                        print('\nIoD Sim Run SUMMARY',
-                              '\n===================\n',
-                              ret.stdout.decode())
+                        print(f'\nIoD Sim {operation} SUMMARY\n{ret.stdout.decode()}')
                     except subprocess.TimeoutExpired as e:
                         QMessageBox.warning(self.main_window, 'Error', f'Timeout while running IoD Sim: {e.stderr.decode()}')
                         Debugger.debug(e.output.decode())
                         Debugger.debugerr(e.stderr.decode())
                     except subprocess.CalledProcessError as e:
-                        QMessageBox.warning(self.main_window, 'Error', f'An error occurred while running IoD Sim: {e.stderr.decode()}')
+                        msg = e.stderr.decode()
+                        if 'msg=' in msg:
+                            msg = re.compile(r'msg="(.*)", file=').search(msg).group(1)
+
+                        QMessageBox.warning(self.main_window, 'Error', f'An error occurred while running IoD Sim: {msg}')
                         Debugger.debug(e.output.decode())
                         Debugger.debugerr(e.stderr.decode())
                 except subprocess.CalledProcessError as e:
@@ -186,7 +191,8 @@ class Script(QObject):
                     Debugger.debugerr(e.stderr.decode())
             else:
                 Debugger.debugerr(f'Invalid IoD Sim Path: {self.iodsim_location}')
-                QMessageBox.warning(self.main_window, 'Error', 'Windows is only supported with WSL enabled. '
-                                        'Please provide a valid WSL path to reach IoD Sim.')
+                QMessageBox.warning(self.main_window, 'Error',
+                                    'Windows is only supported with WSL enabled. '
+                                    'Please provide a valid WSL path to reach IoD Sim.')
         elif platform == "darwin":
             QMessageBox.warning(self.main_window, 'Error', 'macOS is not supported, yet. Please use Linux or Windows OS.')

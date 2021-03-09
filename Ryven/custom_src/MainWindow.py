@@ -514,7 +514,6 @@ saving: ctrl+s
 
         data = json.dumps(values, indent=4, sort_keys=True)
         #Debugger.debug(data)
-
         file.write(data)
         file.close()
 
