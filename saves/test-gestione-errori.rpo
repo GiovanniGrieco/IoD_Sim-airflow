@@ -1,0 +1,2030 @@
+{
+    "general info": {
+        "type": "Ryven project file"
+    },
+    "scripts": [
+        {
+            "name": "fancy script",
+            "variables": {
+                "LogComponents": {
+                    "serialized": "gASVowAAAAAAAABdlCiMBUN1cnZllIwVUGFyYW1ldHJpY1NwZWVkRmxpZ2h0lIwHUGxhbm5lcpSMIVBhcmFtZXRyaWNTcGVlZERyb25lTW9iaWxpdHlNb2RlbJSMFkRyb25lU2VydmVyQXBwbGljYXRpb26UjBZEcm9uZUNsaWVudEFwcGxpY2F0aW9ulIwbU2NlbmFyaW9Db25maWd1cmF0aW9uSGVscGVylGUu"
+                }
+            },
+            "flow": {
+                "algorithm mode": "data flow",
+                "viewport update mode": "sync",
+                "nodes": [
+                    {
+                        "parent node title": "scenario",
+                        "parent node type": "Scenario",
+                        "parent node package": "airflow",
+                        "parent node description": "Configure an IoD Sim scenario.",
+                        "position x": 2634.0,
+                        "position y": 594.0,
+                        "state data": {
+                            "name": "IoD Sim",
+                            "logOnFile": true,
+                            "duration": 100,
+                            "logComponents": [
+                                "Curve",
+                                "ParametricSpeedFlight",
+                                "Planner",
+                                "ParametricSpeedDroneMobilityModel",
+                                "DroneServerApplication",
+                                "DroneClientApplication",
+                                "ScenarioConfigurationHelper"
+                            ],
+                            "drones": [
+                                {
+                                    "applications": [
+                                        {
+                                            "name": "ns3::DroneClientApplication",
+                                            "attributes": [
+                                                {
+                                                    "name": "StopTime",
+                                                    "value": 299.0
+                                                },
+                                                {
+                                                    "name": "StartTime",
+                                                    "value": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mobilityModel": {
+                                        "name": "ns3::ParametricSpeedDroneMobilityModel",
+                                        "attributes": [
+                                            {
+                                                "name": "CurveStep",
+                                                "value": 0.001
+                                            },
+                                            {
+                                                "name": "FlightPlan",
+                                                "value": [
+                                                    {
+                                                        "position": [
+                                                            0.0,
+                                                            0.0,
+                                                            0.0
+                                                        ],
+                                                        "interest": 0,
+                                                        "restTime": 3.0
+                                                    },
+                                                    {
+                                                        "position": [
+                                                            10.0,
+                                                            10.0,
+                                                            0.0
+                                                        ],
+                                                        "interest": 1,
+                                                        "restTime": 0.0
+                                                    },
+                                                    {
+                                                        "position": [
+                                                            20.0,
+                                                            0.0,
+                                                            0.0
+                                                        ],
+                                                        "interest": 0,
+                                                        "restTime": 3.0
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "SpeedCoefficients",
+                                                "value": [
+                                                    1,
+                                                    0
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "netDevices": [
+                                        {
+                                            "type": "wifi",
+                                            "macLayer": {
+                                                "name": "ns3::StaWifiMac",
+                                                "attributes": [
+                                                    {
+                                                        "name": "Ssid",
+                                                        "value": "wifi-default"
+                                                    }
+                                                ]
+                                            },
+                                            "networkLayer": 0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "ZSPs": null,
+                            "resultsPath": "../results/",
+                            "staticNs3Config": [
+                                {
+                                    "name": "ns3::WifiRemoteStationManager::FragmentationThreshold",
+                                    "value": 2200
+                                },
+                                {
+                                    "name": "ns3::WifiRemoteStationManager::RtsCtsThreshold",
+                                    "value": 2200
+                                },
+                                {
+                                    "name": "ns3::WifiRemoteStationManager::NonUnicastMode",
+                                    "value": "DsssRate1Mbps"
+                                }
+                            ],
+                            "phyLayer": [
+                                {
+                                    "type": "wifi",
+                                    "standard": "802.11n-2.4GHz",
+                                    "rxGain": 0.0,
+                                    "mode": "DsssRate1Mbps",
+                                    "channel": {
+                                        "propagationDelayModel": {
+                                            "name": "ns3::ConstantSpeedPropagationDelayModel",
+                                            "attributes": []
+                                        },
+                                        "propagationLossModel": {
+                                            "name": "ns3::FriisPropagationLossModel",
+                                            "attributes": [
+                                                {
+                                                    "name": "Frequency",
+                                                    "value": 2400000000.0
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ],
+                            "macLayer": [
+                                {
+                                    "type": "wifi",
+                                    "ssid": "wifi-default",
+                                    "remoteStationManager": {
+                                        "name": "ns3::ConstantRateWifiManager",
+                                        "attributes": [
+                                            {
+                                                "name": "ControlMode",
+                                                "value": "DsssRate1Mbps"
+                                            },
+                                            {
+                                                "name": "DataMode",
+                                                "value": "DsssRate1Mbps"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "networkLayer": [
+                                {
+                                    "type": "ipv4",
+                                    "address": "10.0.0.0",
+                                    "mask": "255.255.255.0"
+                                }
+                            ]
+                        },
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Name",
+                                "has widget": true,
+                                "widget name": "std line edit m r",
+                                "widget data": "IoD Sim",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Log on File",
+                                "has widget": true,
+                                "widget name": "std line edit m r nb",
+                                "widget data": "",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Duration",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "100",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Log Components",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Drone List",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "ZSP List",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Results Path",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "ns3 Config",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "PHY Layers",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "MAC Layers",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "NET Layers",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": []
+                    },
+                    {
+                        "parent node title": "get var",
+                        "parent node type": "get variable node",
+                        "parent node package": "built in",
+                        "parent node description": "gets the value of a variable",
+                        "position x": 2252.0,
+                        "position y": 388.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": true,
+                                "widget name": "std line edit",
+                                "widget data": "LogComponents",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "val"
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 2238.0,
+                        "position y": 480.0,
+                        "state data": {
+                            "num data inputs": 1
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Entity",
+                        "parent node type": "Entity",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a new Entity to be simulated.",
+                        "position x": 1997.0,
+                        "position y": 341.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Applications",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Mobility Model",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Network Devices",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "DroneClientApplication",
+                        "parent node type": "",
+                        "parent node package": "iodsim",
+                        "parent node description": "",
+                        "position x": 1499.0,
+                        "position y": 163.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Duration",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Port",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Ipv4SubnetMask",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Ipv4Address",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "StopTime",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "StartTime",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 1786.0,
+                        "position y": 227.0,
+                        "state data": {
+                            "num data inputs": 1
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 1210.0,
+                        "position y": 175.0,
+                        "main widget data": {
+                            "text": "299"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 1211.0,
+                        "position y": 244.0,
+                        "main widget data": {
+                            "text": "1"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "ParametricSpeedDroneMobilityModel",
+                        "parent node type": "",
+                        "parent node package": "iodsim",
+                        "parent node description": "",
+                        "position x": 1567.0,
+                        "position y": 404.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "CurveStep",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "SimulationDuration",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "FlightPlan",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "SpeedCoefficients",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Velocity",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Position",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 1218.0,
+                        "position y": 342.0,
+                        "state data": {
+                            "num data inputs": 2
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            },
+                            "remove input 2": {
+                                "method": "action_remove_input",
+                                "data": 1
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 1025.0,
+                        "position y": 342.0,
+                        "main widget data": {
+                            "text": "0"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Trajectory",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "Define Drone trajectory.",
+                        "position x": 1098.0,
+                        "position y": 782.0,
+                        "main widget data": {},
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "POIs",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Point",
+                        "parent node type": "Point",
+                        "parent node package": "airflow",
+                        "parent node description": "Define a POI in space for the Trajectory.",
+                        "position x": 568.0,
+                        "position y": 405.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Position",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Interest Level",
+                                "has widget": true,
+                                "widget name": "std spin box",
+                                "widget data": 0,
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Time of Rest",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "3.0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 724.0,
+                        "position y": 550.0,
+                        "state data": {
+                            "num data inputs": 3
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            },
+                            "remove input 2": {
+                                "method": "action_remove_input",
+                                "data": 1
+                            },
+                            "remove input 3": {
+                                "method": "action_remove_input",
+                                "data": 2
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "vector",
+                        "parent node type": "Vector",
+                        "parent node package": "airflow",
+                        "parent node description": "",
+                        "position x": 310.0,
+                        "position y": 341.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "x",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "0",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "y",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "0",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "z",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Point",
+                        "parent node type": "Point",
+                        "parent node package": "airflow",
+                        "parent node description": "Define a POI in space for the Trajectory.",
+                        "position x": 486.0,
+                        "position y": 565.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Position",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Interest Level",
+                                "has widget": true,
+                                "widget name": "std spin box",
+                                "widget data": 1,
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Time of Rest",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "vector",
+                        "parent node type": "Vector",
+                        "parent node package": "airflow",
+                        "parent node description": "",
+                        "position x": 228.0,
+                        "position y": 501.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "x",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "10",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "y",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "10",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "z",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Point",
+                        "parent node type": "Point",
+                        "parent node package": "airflow",
+                        "parent node description": "Define a POI in space for the Trajectory.",
+                        "position x": 479.0,
+                        "position y": 746.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Position",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Interest Level",
+                                "has widget": true,
+                                "widget name": "std spin box",
+                                "widget data": 0,
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Time of Rest",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "3.0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "vector",
+                        "parent node type": "Vector",
+                        "parent node package": "airflow",
+                        "parent node description": "",
+                        "position x": 221.0,
+                        "position y": 682.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "x",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "20",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "y",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "0",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "z",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 1223.0,
+                        "position y": 438.0,
+                        "main widget data": {
+                            "text": "0.001"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 1894.0,
+                        "position y": 604.0,
+                        "state data": {
+                            "num data inputs": 1
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "WiFi Net Device",
+                        "parent node type": "WifiNetDevice",
+                        "parent node package": "airflow",
+                        "parent node description": "Represent a WiFi-based Network Device to be installed on an Entity.",
+                        "position x": 1721.0,
+                        "position y": 669.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "MAC Layer",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "NET Layer ID",
+                                "has widget": true,
+                                "widget name": "std spin box",
+                                "widget data": 0,
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "StaWifiMac",
+                        "parent node type": "",
+                        "parent node package": "iodsim",
+                        "parent node description": "",
+                        "position x": 1628.0,
+                        "position y": 1144.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "ActiveProbing",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "MaxMissedBeacons",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "AssocRequestTimeout",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "WaitBeaconTimeout",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "ProbeRequestTimeout",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "PcfSupported",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BK_Txop",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BE_Txop",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VI_Txop",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VO_Txop",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Txop",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "ShortSlotTimeSupported",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BK_BlockAckInactivityTimeout",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BE_BlockAckInactivityTimeout",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VI_BlockAckInactivityTimeout",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VO_BlockAckInactivityTimeout",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BK_BlockAckThreshold",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BE_BlockAckThreshold",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VI_BlockAckThreshold",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VO_BlockAckThreshold",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BK_MaxAmpduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BE_MaxAmpduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VI_MaxAmpduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VO_MaxAmpduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BK_MaxAmsduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "BE_MaxAmsduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VI_MaxAmsduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "VO_MaxAmsduSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "CtsToSelfSupported",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "QosSupported",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Ssid",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 1339.0,
+                        "position y": 1423.0,
+                        "main widget data": {
+                            "text": "wifi-default"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 2284.0,
+                        "position y": 1814.0,
+                        "state data": {
+                            "num data inputs": 3
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            },
+                            "remove input 2": {
+                                "method": "action_remove_input",
+                                "data": 1
+                            },
+                            "remove input 3": {
+                                "method": "action_remove_input",
+                                "data": 2
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Attribute",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "Generic ns3 Attribute.",
+                        "position x": 2000.0,
+                        "position y": 1723.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Name",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "ns3::WifiRemoteStationManager::FragmentationThreshold",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Value",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "2200",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Attribute",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "Generic ns3 Attribute.",
+                        "position x": 1998.0,
+                        "position y": 1855.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Name",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "ns3::WifiRemoteStationManager::RtsCtsThreshold",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Value",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "2200",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Attribute",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "Generic ns3 Attribute.",
+                        "position x": 1992.0,
+                        "position y": 1986.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Name",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "ns3::WifiRemoteStationManager::NonUnicastMode",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Value",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "DsssRate1Mbps",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 2280.0,
+                        "position y": 2114.0,
+                        "state data": {
+                            "num data inputs": 1
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "WiFi PHY Layer",
+                        "parent node type": "WifiPhyLayer",
+                        "parent node package": "airflow",
+                        "parent node description": "Represent a PHY Layer compatible with the IEEE 802.11 family.",
+                        "position x": 1939.0,
+                        "position y": 2148.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Standard",
+                                "has widget": true,
+                                "widget name": "WifiStandardSelector",
+                                "widget data": "802.11n-2.4GHz",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Rx Gain",
+                                "has widget": true,
+                                "widget name": "std line edit m r",
+                                "widget data": "0.0",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Mode",
+                                "has widget": true,
+                                "widget name": "PhyModeSelector",
+                                "widget data": "DsssRate1Mbps",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Propagation Delay Model",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Propagation Loss Model",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "ConstantSpeedPropagationDelayModel",
+                        "parent node type": "",
+                        "parent node package": "iodsim",
+                        "parent node description": "",
+                        "position x": 1460.0,
+                        "position y": 2110.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Speed",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "FriisPropagationLossModel",
+                        "parent node type": "",
+                        "parent node package": "iodsim",
+                        "parent node description": "",
+                        "position x": 1445.0,
+                        "position y": 2221.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "MinLoss",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "SystemLoss",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "Frequency",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 1129.0,
+                        "position y": 2248.0,
+                        "main widget data": {
+                            "text": "2.4e9"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "WiFi MAC Layer",
+                        "parent node type": "WifiMacLayer",
+                        "parent node package": "airflow",
+                        "parent node description": "Represent a MAC Layer compatible with the IEEE 802.11 family.",
+                        "position x": 1950.0,
+                        "position y": 2323.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "SSID",
+                                "has widget": true,
+                                "widget name": "std line edit m r",
+                                "widget data": "wifi-default",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Remote Station Manager",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 2305.0,
+                        "position y": 2325.0,
+                        "state data": {
+                            "num data inputs": 1
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "ConstantRateWifiManager",
+                        "parent node type": "",
+                        "parent node package": "iodsim",
+                        "parent node description": "",
+                        "position x": 1550.0,
+                        "position y": 2450.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "ControlMode",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "DataMode",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "HtProtectionMode",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "ErpProtectionMode",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "DefaultTxPowerLevel",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "NonUnicastMode",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "FragmentationThreshold",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "RtsCtsThreshold",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "MaxSlrc",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "MaxSsrc",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 1240.0,
+                        "position y": 2367.0,
+                        "main widget data": {
+                            "text": "DsssRate1Mbps"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "IPv4 Network Layer",
+                        "parent node type": "Ipv4NetworkLayer",
+                        "parent node package": "airflow",
+                        "parent node description": "Represent an IPv4-based network.",
+                        "position x": 2071.0,
+                        "position y": 2557.0,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Address",
+                                "has widget": true,
+                                "widget name": "std line edit m r",
+                                "widget data": "10.0.0.0",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Mask",
+                                "has widget": true,
+                                "widget name": "std line edit m r",
+                                "widget data": "255.255.255.0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 2360.0,
+                        "position y": 2492.0,
+                        "state data": {
+                            "num data inputs": 1
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Select Directory",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "",
+                        "position x": 2231.0,
+                        "position y": 638.0,
+                        "main widget data": "../results/",
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "boolean",
+                        "parent node type": "Boolean",
+                        "parent node package": "airflow",
+                        "parent node description": "",
+                        "position x": 2251.0,
+                        "position y": 317.0,
+                        "main widget data": {},
+                        "state data": {
+                            "value": true
+                        },
+                        "special actions": {},
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    }
+                ],
+                "connections": [
+                    {
+                        "parent node instance index": 1,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 3
+                    },
+                    {
+                        "parent node instance index": 2,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 4
+                    },
+                    {
+                        "parent node instance index": 3,
+                        "output port index": 0,
+                        "connected node instance": 2,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 4,
+                        "output port index": 0,
+                        "connected node instance": 5,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 5,
+                        "output port index": 0,
+                        "connected node instance": 3,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 6,
+                        "output port index": 0,
+                        "connected node instance": 4,
+                        "connected input port index": 4
+                    },
+                    {
+                        "parent node instance index": 7,
+                        "output port index": 0,
+                        "connected node instance": 4,
+                        "connected input port index": 5
+                    },
+                    {
+                        "parent node instance index": 7,
+                        "output port index": 0,
+                        "connected node instance": 9,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 8,
+                        "output port index": 0,
+                        "connected node instance": 3,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 9,
+                        "output port index": 0,
+                        "connected node instance": 8,
+                        "connected input port index": 3
+                    },
+                    {
+                        "parent node instance index": 10,
+                        "output port index": 0,
+                        "connected node instance": 9,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 11,
+                        "output port index": 0,
+                        "connected node instance": 8,
+                        "connected input port index": 2
+                    },
+                    {
+                        "parent node instance index": 12,
+                        "output port index": 0,
+                        "connected node instance": 13,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 13,
+                        "output port index": 0,
+                        "connected node instance": 11,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 14,
+                        "output port index": 0,
+                        "connected node instance": 12,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 15,
+                        "output port index": 0,
+                        "connected node instance": 13,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 16,
+                        "output port index": 0,
+                        "connected node instance": 15,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 17,
+                        "output port index": 0,
+                        "connected node instance": 13,
+                        "connected input port index": 2
+                    },
+                    {
+                        "parent node instance index": 18,
+                        "output port index": 0,
+                        "connected node instance": 17,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 19,
+                        "output port index": 0,
+                        "connected node instance": 8,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 20,
+                        "output port index": 0,
+                        "connected node instance": 3,
+                        "connected input port index": 2
+                    },
+                    {
+                        "parent node instance index": 21,
+                        "output port index": 0,
+                        "connected node instance": 20,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 22,
+                        "output port index": 0,
+                        "connected node instance": 21,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 23,
+                        "output port index": 0,
+                        "connected node instance": 22,
+                        "connected input port index": 30
+                    },
+                    {
+                        "parent node instance index": 24,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 7
+                    },
+                    {
+                        "parent node instance index": 25,
+                        "output port index": 0,
+                        "connected node instance": 24,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 26,
+                        "output port index": 0,
+                        "connected node instance": 24,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 27,
+                        "output port index": 0,
+                        "connected node instance": 24,
+                        "connected input port index": 2
+                    },
+                    {
+                        "parent node instance index": 28,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 8
+                    },
+                    {
+                        "parent node instance index": 29,
+                        "output port index": 0,
+                        "connected node instance": 28,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 30,
+                        "output port index": 0,
+                        "connected node instance": 29,
+                        "connected input port index": 3
+                    },
+                    {
+                        "parent node instance index": 31,
+                        "output port index": 0,
+                        "connected node instance": 29,
+                        "connected input port index": 4
+                    },
+                    {
+                        "parent node instance index": 32,
+                        "output port index": 0,
+                        "connected node instance": 31,
+                        "connected input port index": 2
+                    },
+                    {
+                        "parent node instance index": 33,
+                        "output port index": 0,
+                        "connected node instance": 34,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 34,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 9
+                    },
+                    {
+                        "parent node instance index": 35,
+                        "output port index": 0,
+                        "connected node instance": 33,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 36,
+                        "output port index": 0,
+                        "connected node instance": 35,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 36,
+                        "output port index": 0,
+                        "connected node instance": 35,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 37,
+                        "output port index": 0,
+                        "connected node instance": 38,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 38,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 10
+                    },
+                    {
+                        "parent node instance index": 39,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 6
+                    },
+                    {
+                        "parent node instance index": 40,
+                        "output port index": 0,
+                        "connected node instance": 0,
+                        "connected input port index": 1
+                    }
+                ],
+                "drawings": []
+            }
+        }
+    ]
+}
