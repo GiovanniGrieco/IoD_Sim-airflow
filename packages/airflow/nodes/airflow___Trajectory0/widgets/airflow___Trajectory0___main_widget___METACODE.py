@@ -10,7 +10,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.figure import Figure
 from qbstyles import mpl_style
 from mpl_toolkits.mplot3d import Axes3D
-from scipy.special import binom
+from scipy.special import comb
 
 class Point:
     """
@@ -111,10 +111,10 @@ class %CLASS%(QWidget, MWB):
                 sum_x = 0.0
                 sum_y = 0.0
                 sum_z = 0.0
-                n = len(tr)
+                n = len(tr) - 1
 
-                for i in range(n):
-                    a = binom(n, i)
+                for i in range(n + 1):
+                    a = comb(n, i, exact=True)
                     b = (1 - t)**(n - i)
                     c = t**i
 
