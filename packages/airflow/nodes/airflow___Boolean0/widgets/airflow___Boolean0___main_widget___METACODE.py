@@ -18,7 +18,7 @@ class %CLASS%(QCheckBox, MWB):
             background-color: transparent;
         }}
         QCheckBox::indicator {{
-            background-color: #bcbbf2;
+            background-color: #4f4f4f;
         }}
         QCheckBox::indicator:checked {{
             image: url("{package_path}/resources/checkbox_checked.png");

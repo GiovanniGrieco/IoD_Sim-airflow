@@ -36,8 +36,9 @@ class %CLASS%(QWidget, MWB):
                 padding-bottom: 5px;
                 padding-left: 22px;
                 padding-right: 22px;
-                border: 1px solid #666666;
+                border: 1px solid #5a5a5a;
                 border-radius: 5px;
+                color: #c6c6c6;
             }
         ''')
         self.setFixedWidth(150)

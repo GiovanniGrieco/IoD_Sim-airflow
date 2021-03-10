@@ -24,7 +24,7 @@ class StartupDialog(QDialog):
 
             <p>The original version of Ryven is made by Leon Thomm.</p>
 
-            <p>Extensions for IoD Sim are made by Giovanni Grieco and Sara Galasso.</p>
+            <p>Extensions for IoD Sim are made by Sara Galasso and Giovanni Grieco.</p>
             </div>
         ''')
         info_text_edit.setReadOnly(True)

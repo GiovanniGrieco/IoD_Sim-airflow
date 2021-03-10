@@ -1,0 +1,207 @@
+{
+    "ZSPs": [
+        {
+            "applications": [
+                {
+                    "attributes": [
+                        {
+                            "name": "StopTime",
+                            "value": 1.0
+                        },
+                        {
+                            "name": "StartTime",
+                            "value": 299.0
+                        }
+                    ],
+                    "name": "ns3::DroneServerApplication"
+                }
+            ],
+            "mobilityModel": {
+                "attributes": [
+                    {
+                        "name": "Position",
+                        "value": [
+                            10.0,
+                            10.0,
+                            0.0
+                        ]
+                    }
+                ],
+                "name": "ns3::ConstantPositionMobilityModel"
+            },
+            "netDevices": [
+                {
+                    "macLayer": {
+                        "attributes": [
+                            {
+                                "name": "Ssid",
+                                "value": "wifi-default"
+                            }
+                        ],
+                        "name": "ns3::ApWifiMac"
+                    },
+                    "networkLayer": 0,
+                    "type": "wifi"
+                }
+            ]
+        }
+    ],
+    "drones": [
+        {
+            "applications": [
+                {
+                    "attributes": [
+                        {
+                            "name": "StopTime",
+                            "value": 299.0
+                        },
+                        {
+                            "name": "StartTime",
+                            "value": 1.0
+                        }
+                    ],
+                    "name": "ns3::DroneClientApplication"
+                }
+            ],
+            "mobilityModel": {
+                "attributes": [
+                    {
+                        "name": "CurveStep",
+                        "value": 0.001
+                    },
+                    {
+                        "name": "FlightPlan",
+                        "value": [
+                            {
+                                "interest": 0,
+                                "position": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "restTime": 3.0
+                            },
+                            {
+                                "interest": 1,
+                                "position": [
+                                    10.0,
+                                    10.0,
+                                    0.0
+                                ],
+                                "restTime": 0.0
+                            },
+                            {
+                                "interest": 0,
+                                "position": [
+                                    20.0,
+                                    0.0,
+                                    0.0
+                                ],
+                                "restTime": 3.0
+                            }
+                        ]
+                    },
+                    {
+                        "name": "SpeedCoefficients",
+                        "value": [
+                            1,
+                            0
+                        ]
+                    }
+                ],
+                "name": "ns3::ParametricSpeedDroneMobilityModel"
+            },
+            "netDevices": [
+                {
+                    "macLayer": {
+                        "attributes": [
+                            {
+                                "name": "Ssid",
+                                "value": "wifi-default"
+                            }
+                        ],
+                        "name": "ns3::StaWifiMac"
+                    },
+                    "networkLayer": 0,
+                    "type": "wifi"
+                }
+            ]
+        }
+    ],
+    "duration": 100,
+    "logComponents": [
+        "Curve",
+        "ParametricSpeedFlight",
+        "Planner",
+        "ParametricSpeedDroneMobilityModel",
+        "DroneServerApplication",
+        "DroneClientApplication",
+        "ScenarioConfigurationHelper"
+    ],
+    "logOnFile": false,
+    "macLayer": [
+        {
+            "remoteStationManager": {
+                "attributes": [
+                    {
+                        "name": "ControlMode",
+                        "value": "DsssRate1Mbps"
+                    },
+                    {
+                        "name": "DataMode",
+                        "value": "DsssRate1Mbps"
+                    }
+                ],
+                "name": "ns3::ConstantRateWifiManager"
+            },
+            "ssid": "wifi-default",
+            "type": "wifi"
+        }
+    ],
+    "name": "IoD Sim",
+    "networkLayer": [
+        {
+            "address": "10.0.0.0",
+            "mask": "255.255.255.0",
+            "type": "ipv4"
+        }
+    ],
+    "phyLayer": [
+        {
+            "channel": {
+                "propagationDelayModel": {
+                    "attributes": [],
+                    "name": "ns3::ConstantSpeedPropagationDelayModel"
+                },
+                "propagationLossModel": {
+                    "attributes": [
+                        {
+                            "name": "Frequency",
+                            "value": 2400000000.0
+                        }
+                    ],
+                    "name": "ns3::FriisPropagationLossModel"
+                }
+            },
+            "mode": "DsssRate1Mbps",
+            "rxGain": 0.0,
+            "standard": "802.11n-2.4GHz",
+            "type": "wifi"
+        }
+    ],
+    "resultsPath": "../results/",
+    "staticNs3Config": [
+        {
+            "name": "ns3::WifiRemoteStationManager::FragmentationThreshold",
+            "value": 2200
+        },
+        {
+            "name": "ns3::WifiRemoteStationManager::RtsCtsThreshold",
+            "value": 2200
+        },
+        {
+            "name": "ns3::WifiRemoteStationManager::NonUnicastMode",
+            "value": "DsssRate1Mbps"
+        }
+    ]
+}

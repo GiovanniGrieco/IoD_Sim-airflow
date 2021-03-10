@@ -116,7 +116,7 @@ class DesignContainer(QObject):
                   NIPainter_Peasy,
                   QColor('#1e1e1e')),
         FlowTheme('ueli',
-                  QColor('#989c9f'),
+                  QColor('#ffffff'),
                   2,
                   Qt.SolidLine,
                   QColor('#ffffff'),

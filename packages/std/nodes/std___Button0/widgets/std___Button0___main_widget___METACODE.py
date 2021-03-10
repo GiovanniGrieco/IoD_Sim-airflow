@@ -12,7 +12,7 @@ class %CLASS%(QPushButton, MWB):
         MWB.__init__(self, params)
         QPushButton.__init__(self)
 
-        
+
         self.setStyleSheet('''
         QPushButton {
             background-color: #36383B;
@@ -24,7 +24,7 @@ class %CLASS%(QPushButton, MWB):
             border-radius: 5px;
         }
         QPushButton:pressed {
-            background-color: #bcbbf2;
+            background-color: #4f4f4f;
         }
         ''')
         self.clicked.connect(M(self.parent_node_instance.button_clicked))
