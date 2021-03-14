@@ -163,7 +163,7 @@
                                     ]
                                 }
                             ],
-                            "resultsPath": "../results/",
+                            "resultsPath": "./results/",
                             "staticNs3Config": [
                                 {
                                     "name": "ns3::WifiRemoteStationManager::FragmentationThreshold",

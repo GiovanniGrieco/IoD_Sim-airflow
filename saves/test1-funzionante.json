@@ -138,7 +138,7 @@
         "DroneClientApplication",
         "ScenarioConfigurationHelper"
     ],
-    "logOnFile": false,
+    "logOnFile": true,
     "macLayer": [
         {
             "remoteStationManager": {
@@ -189,7 +189,7 @@
             "type": "wifi"
         }
     ],
-    "resultsPath": "../results/",
+    "resultsPath": "./results/",
     "staticNs3Config": [
         {
             "name": "ns3::WifiRemoteStationManager::FragmentationThreshold",

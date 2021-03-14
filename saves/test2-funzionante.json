@@ -371,13 +371,13 @@
                     "name": "ns3::FriisPropagationLossModel"
                 }
             },
-            "mode": "DsssRate1Mbps",
+            "mode": "OfdmRate27MbpsBW10MHz",
             "rxGain": 0.0,
-            "standard": "802.11n-2.4GHz",
+            "standard": "802.11ax-2.4GHz",
             "type": "wifi"
         }
     ],
-    "resultsPath": "../results/",
+    "resultsPath": "./results/",
     "staticNs3Config": [
         {
             "name": "ns3::WifiRemoteStationManager::FragmentationThreshold",
