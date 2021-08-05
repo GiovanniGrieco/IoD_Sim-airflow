@@ -10,12 +10,10 @@ class %CLASS%(NodeInstance):
             'attributes': []
         }
 
-        if self.input(0): d["attributes"].append({"name": "Duration", "value": float(self.input(0))})
+        if self.input(0): d["attributes"].append({"name": "StoreData", "value": bool(self.input(0))})
         if self.input(1): d["attributes"].append({"name": "Port", "value": int(self.input(1))})
-        if self.input(2): d["attributes"].append({"name": "Ipv4SubnetMask", "value": self.input(2)})
-        if self.input(3): d["attributes"].append({"name": "Ipv4Address", "value": self.input(3)})
-        if self.input(4): d["attributes"].append({"name": "StopTime", "value": float(self.input(4))})
-        if self.input(5): d["attributes"].append({"name": "StartTime", "value": float(self.input(5))})
+        if self.input(2): d["attributes"].append({"name": "StopTime", "value": float(self.input(2))})
+        if self.input(3): d["attributes"].append({"name": "StartTime", "value": float(self.input(3))})
 
         self.set_output_val(0, d)
 
