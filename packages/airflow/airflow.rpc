@@ -35,27 +35,22 @@
                 },
                 {
                     "type": "data",
-                    "label": "Log Components",
-                    "has widget": false
-                },
-                {
-                    "type": "data",
-                    "label": "Drone List",
-                    "has widget": false
-                },
-                {
-                    "type": "data",
-                    "label": "ZSP List",
-                    "has widget": false
-                },
-                {
-                    "type": "data",
                     "label": "Results Path",
                     "has widget": false
                 },
                 {
                     "type": "data",
                     "label": "ns3 Config",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Log Components",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "World",
                     "has widget": false
                 },
                 {
@@ -72,9 +67,29 @@
                     "type": "data",
                     "label": "NET Layers",
                     "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Drone List",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "ZSP List",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Remote List",
+                    "has widget": false
                 }
             ],
-            "outputs": []
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": "Preview"
+                }
+            ]
         },
         {
             "title": "boolean",

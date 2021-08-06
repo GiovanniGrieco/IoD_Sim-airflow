@@ -34,6 +34,7 @@ class %CLASS%(NodeInstance):
             'Log on File': 'logOnFile',
             'Duration': 'duration',
             'Log Components': 'logComponents',
+            'World': "world",
             'Drone List': 'drones',
             'ZSP List': 'ZSPs',
             'Results Path': 'resultsPath',
