@@ -69,7 +69,12 @@ class %CLASS%(QWidget, MWB):
         self.ax.clear()
 
         points = [Point(p['position'], p['interest']) for p in control_points]
-        trajectory = self.build_drone_trajectory(points)
+        trs = self.split_trajectory(points)
+
+        trajectory = []
+        for tr in trs:
+            trajectory += self.build_drone_trajectory(tr)
+
         self.build_drone_space(trajectory, points)
 
         self.ax.legend()
@@ -118,6 +123,23 @@ class %CLASS%(QWidget, MWB):
             B.append(Point([sum_x,sum_y,sum_z]))
 
         return B
+
+    def split_trajectory(self, points):
+        trs = []
+
+        j = 0
+
+        for i in range(len(points)):
+            if i == 0:
+                trs.append([points[i]])
+            else:
+                trs[j].append(points[i])
+
+            if points[i].interest == 0:
+                j += 1
+                trs.append([points[i]])
+
+        return trs
 
     def build_drone_space(self, trajectory, control_points):
         """
