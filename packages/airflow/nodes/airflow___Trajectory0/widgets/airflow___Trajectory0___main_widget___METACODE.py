@@ -86,43 +86,36 @@ class %CLASS%(QWidget, MWB):
         Returns:
             Modelled trajectory as an array of Point(s).
         """
-        # Interest = 0 => start/stop of a given trajectory, cut the Bézier Curve.
-        trajectories = []
-        trajectory = []
+        proto = []
 
-        # populate trajectories
-        for pos in drone_positions:
-            trajectory.append(pos)
+        # fill the proto
+        for p in drone_positions:
+            l = p.interest if p.interest != 0 else 1
+            for _ in range(l):
+                proto.append(p)
 
-            if pos.interest == 0 and len(trajectory) > 1:
-                trajectories.append(trajectory)
-                # clean up
-                trajectory = [pos]
+        c = 0.001
+        START = 0
+        END = 1 + c
 
-        # tolerance in case the user forgot to add the last point with interest = 0
-        if len(trajectory) > 1:
-            trajectories.append(trajectory)
+        B = [] # Bezier curve points
 
-        # construct trajectory
-        B = []  # Bezier curve, our trajectory
+        for t in np.arange(START, END, step):
+            sum_x = 0.0
+            sum_y = 0.0
+            sum_z = 0.0
+            n = len(proto) - 1
 
-        for tr in trajectories:
-            for t in np.arange(0, 1, step):
-                sum_x = 0.0
-                sum_y = 0.0
-                sum_z = 0.0
-                n = len(tr) - 1
+            for i in range(n+1):
+                a = comb(n, i, exact=True)
+                b = (1 - t)**(n - i)
+                c = t**i
 
-                for i in range(n + 1):
-                    a = comb(n, i, exact=True)
-                    b = (1 - t)**(n - i)
-                    c = t**i
+                sum_x += a * b * c * proto[i].x
+                sum_y += a * b * c * proto[i].y
+                sum_z += a * b * c * proto[i].z
 
-                    sum_x += a * b * c * tr[i].x
-                    sum_y += a * b * c * tr[i].y
-                    sum_z += a * b * c * tr[i].z
-
-                B.append(Point([sum_x, sum_y, sum_z]))
+            B.append(Point([sum_x,sum_y,sum_z]))
 
         return B
 
