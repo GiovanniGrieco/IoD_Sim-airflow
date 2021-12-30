@@ -11,7 +11,6 @@ from custom_src.DrawingObject import DrawingObject
 from custom_src.FlowCommands import MoveComponents_Command, PlaceNodeInstanceInScene_Command, \
     PlaceDrawingObject_Command, RemoveComponents_Command, ConnectGates_Command, Paste_Command
 from custom_src.FlowProxyWidget import FlowProxyWidget
-from custom_src.FlowStylusModesWidget import FlowStylusModesWidget
 from custom_src.FlowZoomWidget import FlowZoomWidget
 from custom_src.GlobalAttributes import Flow_AlgorithmMode, Flow_ViewportUpdateMode
 from custom_src.Node import Node
@@ -124,13 +123,6 @@ class Flow(QGraphicsView):
         self.current_drawing = None
         self.drawing = False
         self.drawings = []
-        self.stylus_modes_proxy = FlowProxyWidget(self)
-        self.stylus_modes_proxy.setFlag(QGraphicsItem.ItemIgnoresTransformations, True)
-        self.stylus_modes_proxy.setZValue(1001)
-        self.stylus_modes_widget = FlowStylusModesWidget(self)
-        self.stylus_modes_proxy.setWidget(self.stylus_modes_widget)
-        self.scene().addItem(self.stylus_modes_proxy)
-        self.set_stylus_proxy_pos()
         self.setAttribute(Qt.WA_TabletTracking)
 
         # # TOUCH GESTURES
@@ -344,7 +336,7 @@ class Flow(QGraphicsView):
                     view_pos = self.mapToScene(self.viewport().pos())
                     new_drawing = self.create_and_place_drawing__cmd(
                         view_pos + scaled_event_pos,
-                        config={**self.stylus_modes_widget.get_pen_settings(), 'viewport pos': view_pos}
+                        config={'viewport pos': view_pos}
                     )
                     self.current_drawing = new_drawing
                     self.drawing = True
@@ -424,7 +416,6 @@ class Flow(QGraphicsView):
         painter.setPen(Qt.NoPen)
         painter.drawRect(self.sceneRect())
 
-        self.set_stylus_proxy_pos()  # has to be called here instead of in drawForeground to prevent lagging
         self.set_zoom_proxy_pos()
 
     def drawForeground(self, painter, rect):
@@ -539,16 +530,10 @@ class Flow(QGraphicsView):
     def set_zoom_proxy_pos(self):
         self.zoom_proxy.setPos(self.mapToScene(self.viewport().width() - self.zoom_widget.width(), 0))
 
-    def set_stylus_proxy_pos(self):
-        self.stylus_modes_proxy.setPos(
-            self.mapToScene(self.viewport().width() - self.stylus_modes_widget.width() - self.zoom_widget.width(), 0))
-
     def hide_proxies(self):
-        self.stylus_modes_proxy.hide()
         self.zoom_proxy.hide()
 
     def show_proxies(self):
-        self.stylus_modes_proxy.show()
         self.zoom_proxy.show()
 
     # NODE CHOICE WIDGET
