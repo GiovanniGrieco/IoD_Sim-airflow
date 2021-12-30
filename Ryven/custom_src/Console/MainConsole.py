@@ -40,11 +40,11 @@ class MainConsole(QWidget):
 
         # colors to differentiate input, output and stderr
         self.inpfmt = self.out_display.currentCharFormat()
-        self.inpfmt.setForeground(QBrush(QColor('white')))
+        self.inpfmt.setForeground(QBrush(QColor('#4f525d')))
         self.outfmt = QTextCharFormat(self.inpfmt)
-        self.outfmt.setForeground(QBrush(QColor('#A9D5EF')))
+        self.outfmt.setForeground(QBrush(QColor('#383a42')))
         self.errfmt = QTextCharFormat(self.inpfmt)
-        self.errfmt.setForeground(QBrush(QColor('#B55730')))
+        self.errfmt.setForeground(QBrush(QColor('#b5314b')))
 
         # display input prompt left besides input edit
         self.prompt_label = QLabel('> ', self)

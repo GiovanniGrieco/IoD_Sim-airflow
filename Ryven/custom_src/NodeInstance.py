@@ -493,14 +493,6 @@ class NodeInstance(QGraphicsItem):
     def update_design(self):
         """Loads the shadow effect option and causes redraw with active theme."""
 
-        #if Design.node_instance_shadows_shown:
-        #    self.shadow_effect = QGraphicsDropShadowEffect()
-        #    self.shadow_effect.setXOffset(12)
-        #    self.shadow_effect.setYOffset(12)
-        #    self.shadow_effect.setBlurRadius(20)
-        #    self.shadow_effect.setColor(QColor('#2b2b2b'))
-        #    self.setGraphicsEffect(self.shadow_effect)
-        #else:
         self.setGraphicsEffect(None)
 
         self.title_label.update_design()

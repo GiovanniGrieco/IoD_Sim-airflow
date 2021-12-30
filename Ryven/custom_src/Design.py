@@ -1,8 +1,7 @@
 from PySide2.QtCore import QObject, Signal, Qt
 from PySide2.QtGui import QPen, QColor, QBrush
 
-from custom_src.NodeInstancePainter import NIPainter_DarkStd, NIPainter_DarkTron, NIPainter_Ghostly, NIPainter_Blender, \
-    NIPainter_Easy, NIPainter_Peasy, NIPainter_Ueli
+from custom_src.NodeInstancePainter import NIPainter_Light, NIPainter_Dark
 
 
 class FlowTheme:
@@ -22,7 +21,7 @@ class FlowTheme:
                  flow_conn_exec_color, flow_conn_exec_width, flow_conn_exec_pen_style,
                  flow_conn_data_color, flow_conn_data_width, flow_conn_data_pen_style,
                  node_instance_painter,
-                 flow_background_color=QColor('#333333')):
+                 flow_background_color=QColor('#fefefe')):
         self.name = name
         self.node_inst_painter = node_instance_painter
 
@@ -42,87 +41,25 @@ class FlowTheme:
         else:
             return self.flow_conn_exec_pen.__copy__()
 
-    # def draw_NI_extended_background(self, painter, c, w, h, bounding_rect):
-    #     pass
-    #
-    # def draw_NI_minimalistic(self, painter, c, w, h, bounding_rect, background_color):
-    #     pass
-
-
-# class FlowThemeStdDark(FlowTheme):
-#     def __init__(self):
-#         super(FlowThemeStdDark, self).__init__(name='std dark',
-#                                                flow_conn_exec_color=QColor(188, 187, 242),
-#                                                flow_conn_exec_width=5,
-#                                                flow_conn_exec_pen_style=Qt.SolidLine,
-#                                                flow_conn_data_color=QColor(188, 187, 242),
-#                                                flow_conn_data_width=5,
-#                                                flow_conn_data_pen_style=Qt.DashLine)
-#
-
-
 class DesignContainer(QObject):
-
-    # flow_themes = ['dark std', 'dark tron', 'ghostly', 'blender']
     flow_themes = [
-        FlowTheme('dark std',
-                  QColor(188, 187, 242),
-                  5,
-                  Qt.SolidLine,
-                  QColor(188, 187, 242),
-                  5,
-                  Qt.DashLine,
-                  NIPainter_DarkStd),
-        FlowTheme('dark tron',
-                  QColor(0, 120, 180),
-                  4,
-                  Qt.SolidLine,
-                  QColor(0, 120, 180),
-                  4,
-                  Qt.DashLine,
-                  NIPainter_DarkTron),
-        FlowTheme('ghostly',
-                  QColor(0, 17, 25),
+        FlowTheme('light',
+                  QColor('#0000ff'),
                   2,
                   Qt.SolidLine,
-                  QColor(0, 17, 25),
+                  QColor('#00ff00'),
                   2,
                   Qt.DashLine,
-                  NIPainter_Ghostly),
-        FlowTheme('blender',
-                  QColor(0, 17, 25),
-                  2,
-                  Qt.SolidLine,
-                  QColor(0, 17, 25),
-                  2,
-                  Qt.DashLine,
-                  NIPainter_Blender),
-        FlowTheme('easy',
-                  QColor('#989c9f'),
-                  2,
-                  Qt.SolidLine,
-                  QColor('#989c9f'),
-                  2,
-                  Qt.DashLine,
-                  NIPainter_Easy,
-                  QColor('#3c3c3c')),
-        FlowTheme('peasy',
-                  QColor('#989c9f'),
-                  2,
-                  Qt.SolidLine,
-                  QColor('#989c9f'),
-                  2,
-                  Qt.DashLine,
-                  NIPainter_Peasy,
-                  QColor('#1e1e1e')),
-        FlowTheme('ueli',
+                  NIPainter_Light,
+                  QColor('#fefefe')),
+        FlowTheme('dark',
                   QColor('#ffffff'),
                   2,
                   Qt.SolidLine,
                   QColor('#ffffff'),
                   2,
                   Qt.DashLine,
-                  NIPainter_Ueli,
+                  NIPainter_Dark,
                   QColor('#1e1e1e'))
     ]
 

@@ -13,23 +13,6 @@ class StartupDialog(QDialog):
 
         layout = QVBoxLayout()
 
-        # info text edit
-        info_text_edit = QTextEdit()
-        info_text_edit.setHtml('''
-            <h2 style="font-family: Roboto; font-size: xx-large; color: #a9d5ef;">Welcome to Ryven</h2>
-            <div style="font-family: Roboto; font-size: large;">
-
-            <p>
-            This version of Ryven has been heavily modified and integrated with IoD Sim.</p>
-
-            <p>The original version of Ryven is made by Leon Thomm.</p>
-
-            <p>Extensions for IoD Sim are made by Sara Galasso and Giovanni Grieco.</p>
-            </div>
-        ''')
-        info_text_edit.setReadOnly(True)
-        layout.addWidget(info_text_edit)
-
         # buttons
         plain_project_push_button = QPushButton('create new plain project')
         plain_project_push_button.setFocus()
@@ -45,11 +28,11 @@ class StartupDialog(QDialog):
 
         self.setLayout(layout)
 
-        self.setWindowTitle('Ryven')
+        self.setWindowTitle('Aiflow')
         self.setWindowIcon(QIcon('../resources/pics/program_icon2.png'))
-        self.setFixedSize(500, 200)
+        self.setFixedSize(500, 50)
 
-        self.load_stylesheet('dark')
+        self.load_stylesheet('light')
 
         self.editor_startup_configuration = {}
 

@@ -13,7 +13,7 @@ class Node:
         self.main_widget_class = None
         self.main_widget_pos = ''
         self.design_style = 'extended'  # default value just for testing
-        self.color = QColor('#fdd835')  # default value just for testing
+        self.color = QColor('#fc7435')  # default value just for testing
 
         #   dynamic: (get copied and can be individually edited in NIs)
         self.inputs = []

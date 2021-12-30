@@ -26,29 +26,33 @@ class FlowZoomWidget(QWidget):
 
         self.zoom_in_button.setStyleSheet('''
             QPushButton {
-                background-color: rgba(10, 10, 10, 150);
-                border: 1px solid #aaaaaa;
+                background-color: #eef4f9;
+                border: 1px solid #dce1e5;
                 border-radius: 8px;
-                color: #aaaaaa;
+                color: #191919;
                 height: 35px;
                 width: 35px;
+                font-size: 28px;
+                vertical-align: middle;
             }
             QPushButton:hover:pressed {
-                background-color: rgba(100, 100, 100, 150);
+                background-color: #e6ebf0;
             }
         ''')
 
         self.zoom_out_button.setStyleSheet('''
             QPushButton {
-                background-color: rgba(10, 10, 10, 150);
-                border: 1px solid #aaaaaa;
+                background-color: #eef4f9;
+                border: 1px solid #dce1e5;
                 border-radius: 8px;
-                color: #aaaaaa;
+                color: #191919;
                 height: 35px;
                 width: 35px;
+                font-size: 28px;
+                vertical-align: middle;
             }
             QPushButton:hover:pressed {
-                background-color: rgba(100, 100, 100, 150);
+                background-color: #e6ebf0;
             }
         ''')
 

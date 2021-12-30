@@ -35,9 +35,9 @@ class MainWindow(QMainWindow):
             self.ui.scripts_console_splitter.addWidget(MainConsole.main_console)
         self.ui.scripts_console_splitter.setSizes([350, 350])
         self.ui.splitter.setSizes([120, 800])
-        self.setWindowTitle('Ryven')
+        self.setWindowTitle('Airflow (powered by Ryven)')
         self.setWindowIcon(QIcon('../resources/pics/program_icon2.png'))
-        self.load_stylesheet('dark')
+        self.load_stylesheet('light')
         self.ui.scripts_tab_widget.removeTab(0)
 
         # menu actions

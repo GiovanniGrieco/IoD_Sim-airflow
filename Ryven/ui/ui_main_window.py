@@ -62,39 +62,6 @@ class Ui_MainWindow(object):
         self.scripts_console_splitter = QSplitter(self.scripts_groupBox)
         self.scripts_console_splitter.setObjectName(u"scripts_console_splitter")
         self.scripts_console_splitter.setOrientation(Qt.Vertical)
-        #self.widget = QWidget(self.scripts_console_splitter)
-        #self.widget.setObjectName(u"widget")
-        #self.gridLayout = QGridLayout(self.widget)
-        #self.gridLayout.setSpacing(6)
-        #self.gridLayout.setContentsMargins(11, 11, 11, 11)
-        #self.gridLayout.setObjectName(u"gridLayout")
-        #self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        #self.scripts_scrollArea = QScrollArea(self.widget)
-        #self.scripts_scrollArea.setObjectName(u"scripts_scrollArea")
-        #self.scripts_scrollArea.setWidgetResizable(True)
-        #self.scrollAreaWidgetContents = QWidget()
-        #self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        #self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 935, 727))
-        #self.scripts_scrollArea.setWidget(self.scrollAreaWidgetContents)
-
-        #self.gridLayout.addWidget(self.scripts_scrollArea, 0, 0, 1, 1)
-
-        #self.new_script_name_lineEdit = QLineEdit(self.widget)
-        #self.new_script_name_lineEdit.setObjectName(u"new_script_name_lineEdit")
-
-        #self.gridLayout.addWidget(self.new_script_name_lineEdit, 1, 0, 1, 1)
-
-        #self.add_new_script_pushButton = QPushButton(self.widget)
-        #self.add_new_script_pushButton.setObjectName(u"add_new_script_pushButton")
-        #sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        #sizePolicy1.setHorizontalStretch(0)
-        #sizePolicy1.setVerticalStretch(0)
-        #sizePolicy1.setHeightForWidth(self.add_new_script_pushButton.sizePolicy().hasHeightForWidth())
-        #self.add_new_script_pushButton.setSizePolicy(sizePolicy1)
-
-        #self.gridLayout.addWidget(self.add_new_script_pushButton, 2, 0, 1, 1)
-
-        #self.scripts_console_splitter.addWidget(self.widget)
 
         self.gridLayout_3.addWidget(self.scripts_console_splitter, 0, 0, 1, 1)
 
@@ -154,7 +121,6 @@ class Ui_MainWindow(object):
 
         self.scripts_tab_widget.setCurrentIndex(0)
 
-
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
@@ -179,8 +145,6 @@ class Ui_MainWindow(object):
 "This will take a few seconds.", None))
 #endif // QT_CONFIG(tooltip)
         self.scripts_groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Console", None))
-        #self.new_script_name_lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"script title", None))
-        #self.add_new_script_pushButton.setText(QCoreApplication.translate("MainWindow", u"add new", None))
         self.scripts_tab_widget.setTabText(self.scripts_tab_widget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuView.setTitle(QCoreApplication.translate("MainWindow", u"View", None))

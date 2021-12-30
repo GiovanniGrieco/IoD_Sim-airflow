@@ -422,7 +422,7 @@ class StdSpinBox_PortInstanceWidget(QSpinBox, IWB):
         self.setFixedHeight(25)
         self.setStyleSheet("""
             QSpinBox {
-                color: white;
+                color: red;
                 background: transparent;
             }
         """)

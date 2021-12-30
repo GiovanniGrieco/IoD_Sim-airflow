@@ -76,7 +76,7 @@ class Log(QWidget):
                 border: None;
             }
             QWidget {
-                color: #e9f4fb;
+                color: #383a42;
             }
         '''
         self.disabled_style_sheet = '''
@@ -84,7 +84,7 @@ class Log(QWidget):
                 border: None;
             }
             QWidget {
-                color: #e9f4fb;
+                color: #383a42;
             }
             QPlainTextEdit {
                 background: black;

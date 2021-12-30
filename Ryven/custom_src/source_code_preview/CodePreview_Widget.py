@@ -156,7 +156,7 @@ class CodePreview_Widget(QWidget):
                 f.setBold(True)
                 o.setFont(f)
             else:
-                o.setStyleSheet('color: white;')
+                o.setStyleSheet('color: #ff0000;')
                 f = o.font()
                 f.setBold(False)
                 o.setFont(f)

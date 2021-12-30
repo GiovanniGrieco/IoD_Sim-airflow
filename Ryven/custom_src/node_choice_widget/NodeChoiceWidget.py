@@ -61,7 +61,7 @@ class NodeChoiceWidget(QWidget):
         self.update_view('')
 
         try:
-            f = open('../resources/stylesheets/dark_node_choice_widget.txt')
+            f = open('../resources/stylesheets/light_node_choice_widget.txt')
             self.setStyleSheet(f.read())
             f.close()
         except FileNotFoundError:
@@ -168,10 +168,10 @@ class NodeChoiceWidget(QWidget):
         node_widget.setObjectName('node_widget_' + str(self.node_widget_index_counter))
         self.node_widget_index_counter += 1
         node_widget.chosen.connect(self.node_widget_chosen)
-        
+
         return node_widget
 
-    
+
     def node_widget_focused_from_inside(self):
         self.set_active_node_widget_index(self.all_current_node_widgets.index(self.sender()))
 

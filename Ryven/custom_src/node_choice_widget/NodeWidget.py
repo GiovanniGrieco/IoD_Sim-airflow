@@ -48,7 +48,7 @@ QToolTip {
 
         package_name_label = QLabel(node.package)
         package_name_label.setFont(QFont('Roboto', 8, italic=True))
-        package_name_label.setStyleSheet('color: white;')
+        package_name_label.setStyleSheet('color: #ff0000;')
 
         package_name_layout_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         package_name_layout.addItem(package_name_layout_spacer)
