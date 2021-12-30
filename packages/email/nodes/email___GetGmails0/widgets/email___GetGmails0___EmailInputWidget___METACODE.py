@@ -20,7 +20,7 @@ class %CLASS%(QLineEdit, IWB):
             }
         ''')
 
-        self.setFont(QFont('Corbel', 10))
+        self.setFont(QFont('Roboto', 10))
 
         self.textChanged.connect(M(self.email_text_changed))
 

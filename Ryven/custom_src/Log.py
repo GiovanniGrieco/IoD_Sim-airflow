@@ -51,7 +51,7 @@ class Log(QWidget):
         self.header_layout = QHBoxLayout()
 
         title_label = QLabel(title)
-        title_label.setFont(QFont('Poppins', 13))
+        title_label.setFont(QFont('Roboto', 13))
         self.header_layout.addWidget(title_label)
 
         self.remove_button = QPushButton('x')
@@ -87,7 +87,7 @@ class Log(QWidget):
                 color: #e9f4fb;
             }
             QPlainTextEdit {
-                background: black; 
+                background: black;
                 color: grey;
             }
         '''

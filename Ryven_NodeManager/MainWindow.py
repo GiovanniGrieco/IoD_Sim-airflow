@@ -20,7 +20,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        QFontDatabase.addApplicationFont('../resources/fonts/source code pro/SourceCodePro-Regular.ttf')
+        QFontDatabase.addApplicationFont('../resources/fonts/roboto mono/RobotoMono-Regular.ttf')
 
         self.nodes = []
 

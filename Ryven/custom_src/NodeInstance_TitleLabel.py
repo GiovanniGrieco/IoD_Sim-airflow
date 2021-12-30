@@ -15,7 +15,7 @@ class TitleLabel(QGraphicsWidget):
         self.parent_node_instance = parent_node_instance
         self.title_str = self.parent_node_instance.parent_node.title
         font = QFont('Roboto', 15) if self.parent_node_instance.parent_node.design_style == 'extended' else \
-            QFont('K2D', 20, QFont.Bold, True)  # should be quite similar to every specific font chosen by the painter
+            QFont('Roboto', 20, QFont.Bold, True)  # should be quite similar to every specific font chosen by the painter
         fm = QFontMetricsF(font)
 
         # approximately!
@@ -54,7 +54,7 @@ class TitleLabel(QGraphicsWidget):
     def set_NI_hover_state(self, hovering: bool):
         self.hovering = hovering
         self.update_design()
-    
+
     def theme_changed(self, new_theme):
         """Gets called from the parent node instance because the order of the different updates matters.""" # not working yet
         self.update_design()

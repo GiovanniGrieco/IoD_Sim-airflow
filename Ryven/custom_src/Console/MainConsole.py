@@ -157,7 +157,7 @@ class ConsoleInputLineEdit(QLineEdit):
         self.hist_index = 0
         self.hist_list = []
         self.prompt_pattern = re.compile('^[>\.]')
-        self.setFont(QFont('Consolas', 12))
+        self.setFont(QFont('Roboto', 12))
 
     def event(self, ev: QEvent) -> bool:
         """
@@ -213,7 +213,7 @@ class ConsoleDisplay(QPlainTextEdit):
         self.setObjectName('ConsoleDisplay')
         self.setMaximumBlockCount(max_block_count)
         self.setReadOnly(True)
-        self.setFont(QFont('Consolas', 12))
+        self.setFont(QFont('Roboto', 12))
 
 
 class RedirectOutput:

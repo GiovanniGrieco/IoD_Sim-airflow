@@ -91,7 +91,7 @@ class NIPainter_DarkStd(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, QColor(30, 43, 48) if not hovering else node_color.lighter(),
                 1.5,
-                QFont('K2D', 20, QFont.Bold, True),
+                QFont('Roboto', 20, QFont.Bold, True),
                 bounding_rect
             )
 
@@ -200,7 +200,7 @@ class NIPainter_DarkTron(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color,
                 2,
-                QFont('K2D', 20, QFont.Bold, True),
+                QFont('Roboto', 20, QFont.Bold, True),
                 bounding_rect
             )
 
@@ -359,7 +359,7 @@ class NIPainter_Ghostly(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color,
                 2,
-                QFont('K2D', 20, QFont.Bold, True),
+                QFont('Roboto', 20, QFont.Bold, True),
                 bounding_rect
             )
 
@@ -493,7 +493,7 @@ class NIPainter_Blender(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color,
                 2,
-                QFont('K2D', 20, QFont.Bold, True),
+                QFont('Roboto', 20, QFont.Bold, True),
                 bounding_rect
             )
 

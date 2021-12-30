@@ -20,7 +20,7 @@ class %CLASS%(QLineEdit, IWB):
             }
         ''')
 
-        self.setFont(QFont('Corbel', 10))
+        self.setFont(QFont('Roboto', 10))
         self.setEchoMode(QLineEdit.Password)
 
         # print('self.height():', self.height())

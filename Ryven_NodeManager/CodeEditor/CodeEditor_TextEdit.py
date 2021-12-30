@@ -10,7 +10,7 @@ class CodeEditor_TextEdit(QTextEdit):
 
         self.highlighting = True
 
-        self.setFont(QFont('source code pro', 11))
+        self.setFont(QFont('Roboto Mono', 11))
         self.setTabStopWidth(QFontMetrics(self.font()).width(' ')*4)
 
         self.highlighter = CodeEditor_Highlighter()

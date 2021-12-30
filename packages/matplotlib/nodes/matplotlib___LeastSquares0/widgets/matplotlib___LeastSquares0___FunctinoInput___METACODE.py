@@ -9,7 +9,7 @@ class %CLASS%(QLineEdit, IWB):
     def __init__(self, params):
         IWB.__init__(self, params)
         QLineEdit.__init__(self)
-        
+
         c = self.parent_node_instance.color.name()
         self.setStyleSheet('''
 QTextEdit{
@@ -22,7 +22,7 @@ QTextEdit{
         self.base_width = 200
         self.setFixedWidth(self.base_width)
         self.textChanged.connect(M(self.text_changed))
-        self.setFont(QFont('source code pro'))
+        self.setFont(QFont('Roboto Mono'))
 
 
     def focusOutEvent(self, e):

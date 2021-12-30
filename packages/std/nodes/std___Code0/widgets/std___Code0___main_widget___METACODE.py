@@ -12,12 +12,12 @@ class %CLASS%(QWidget, MWB):
         MWB.__init__(self, params)
         QWidget.__init__(self)
 
-        
+
 
         self.code_text_edits = []
 
         # UI
-        self.code_font = QFont('Courier New', 12)
+        self.code_font = QFont('Roboto', 12)
         self.setLayout(QVBoxLayout())
 
         # self.setStyleSheet('''

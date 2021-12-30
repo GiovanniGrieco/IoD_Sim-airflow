@@ -16,7 +16,7 @@ class StartupDialog(QDialog):
         # info text edit
         info_text_edit = QTextEdit()
         info_text_edit.setHtml('''
-            <h2 style="font-family: Courier New; font-size: xx-large; color: #a9d5ef;">Welcome to Ryven</h2>
+            <h2 style="font-family: Roboto; font-size: xx-large; color: #a9d5ef;">Welcome to Ryven</h2>
             <div style="font-family: Roboto; font-size: large;">
 
             <p>
