@@ -4,7 +4,7 @@ Progetto FLC Galasso+Grieco per la realizzazione di un tool di Visual Scripting 
 ## Python Setup
 Use Python virtualenv to prepare your development environment:
 ```
-python -m venv venv
-./venv/Scripts/activate
-pip install -r requirements.txt
+$ python -m venv .venv
+$ . ./.venv/bin/activate
+(venv)$ pip install -r requirements.txt
 ```
