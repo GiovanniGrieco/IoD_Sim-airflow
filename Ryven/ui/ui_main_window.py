@@ -101,6 +101,7 @@ class Ui_MainWindow(object):
         self.splitter.addWidget(self.scripts_groupBox)
         self.scripts_tab_widget = QTabWidget(self.splitter)
         self.scripts_tab_widget.setObjectName(u"scripts_tab_widget")
+        self.scripts_tab_widget.setTabBarAutoHide(True)
         sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
