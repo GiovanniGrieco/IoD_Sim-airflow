@@ -27,6 +27,17 @@
                 "reveal": "silent",
                 "clear": true
             }
+        },
+        {
+            "label": "Setup environment",
+            "type": "shell",
+            "windows": {
+                "command": "tools/setup-env.ps1"
+            },
+            "linux": {
+                "command": "tools/setup-env.sh"
+            },
+            "problemMatcher": []
         }
     ]
 }
