@@ -1,1 +1,262 @@
-{"general info": {"type": "Ryven project file"}, "scripts": [{"name": "fancy script", "variables": {"LogComponents": {"serialized": "gASVowAAAAAAAABdlCiMBUN1cnZllIwVUGFyYW1ldHJpY1NwZWVkRmxpZ2h0lIwHUGxhbm5lcpSMIVBhcmFtZXRyaWNTcGVlZERyb25lTW9iaWxpdHlNb2RlbJSMFkRyb25lU2VydmVyQXBwbGljYXRpb26UjBZEcm9uZUNsaWVudEFwcGxpY2F0aW9ulIwbU2NlbmFyaW9Db25maWd1cmF0aW9uSGVscGVylGUu"}}, "flow": {"algorithm mode": "data flow", "viewport update mode": "sync", "nodes": [{"parent node title": "Attribute", "parent node type": "", "parent node package": "airflow", "parent node description": "Generic ns3 Attribute.", "position x": 133.80053974674843, "position y": 125.93548676019273, "state data": {}, "special actions": {}, "inputs": [{"type": "data", "label": "Name", "has widget": true, "widget name": "std line edit m", "widget data": "Attr1", "widget position": "besides"}, {"type": "data", "label": "Value", "has widget": true, "widget name": "std line edit m", "widget data": "1.0", "widget position": "besides"}], "outputs": [{"type": "data", "label": ""}]}, {"parent node title": "Attribute", "parent node type": "", "parent node package": "airflow", "parent node description": "Generic ns3 Attribute.", "position x": 131.80053974674843, "position y": 239.93548676019273, "state data": {}, "special actions": {}, "inputs": [{"type": "data", "label": "Name", "has widget": true, "widget name": "std line edit m", "widget data": "Attr2", "widget position": "besides"}, {"type": "data", "label": "Value", "has widget": true, "widget name": "std line edit m", "widget data": "1.0", "widget position": "besides"}], "outputs": [{"type": "data", "label": ""}]}, {"parent node title": "toList", "parent node type": "ToList", "parent node package": "airflow", "parent node description": "Create a list from one or more inputs.", "position x": 317.8005397467484, "position y": 200.93548676019273, "state data": {"num data inputs": 2}, "special actions": {"add input": {"method": "action_add_input"}, "remove input 1": {"method": "action_remove_input", "data": 0}, "remove input 2": {"method": "action_remove_input", "data": 1}}, "inputs": [{"type": "data", "label": "", "has widget": false}, {"type": "data", "label": "", "has widget": false}], "outputs": [{"type": "data", "label": ""}]}, {"parent node title": "val", "parent node type": "", "parent node package": "built in", "parent node description": "returns the evaluated value that is typed into the widget", "position x": 319.8005397467484, "position y": 114.93548676019273, "main widget data": {"text": "A Model"}, "state data": {}, "special actions": {"edit val via dialog": {"method": "action_edit_via_dialog"}}, "inputs": [], "outputs": [{"type": "data", "label": ""}]}, {"parent node title": "Model", "parent node type": "", "parent node package": "airflow", "parent node description": "Represents a generic model reference in ns-3.", "position x": 499.8005397467483, "position y": 149.93548676019273, "state data": {}, "special actions": {}, "inputs": [{"type": "data", "label": "Name", "has widget": true, "widget name": "std line edit m", "widget data": "", "widget position": "besides"}, {"type": "data", "label": "Attributes", "has widget": false}], "outputs": [{"type": "data", "label": ""}]}, {"parent node title": "LteEnbMac", "parent node type": "", "parent node package": "iodsim", "parent node description": "", "position x": 994.8005397467487, "position y": 169.93548676019273, "state data": {}, "special actions": {}, "inputs": [{"type": "data", "label": "ComponentCarrierId", "has widget": false}, {"type": "data", "label": "ConnEstFailCount", "has widget": false}, {"type": "data", "label": "RaResponseWindowSize", "has widget": false}, {"type": "data", "label": "PreambleTransMax", "has widget": false}, {"type": "data", "label": "NumberOfRaPreambles", "has widget": false}], "outputs": [{"type": "data", "label": ""}]}], "connections": [{"parent node instance index": 0, "output port index": 0, "connected node instance": 2, "connected input port index": 0}, {"parent node instance index": 1, "output port index": 0, "connected node instance": 2, "connected input port index": 1}, {"parent node instance index": 2, "output port index": 0, "connected node instance": 4, "connected input port index": 1}, {"parent node instance index": 3, "output port index": 0, "connected node instance": 4, "connected input port index": 0}, {"parent node instance index": 4, "output port index": 0, "connected node instance": 5, "connected input port index": 1}], "drawings": []}}]}
+{
+    "general info": {
+        "type": "Ryven project file"
+    },
+    "scripts": [
+        {
+            "name": "Workspace",
+            "variables": {
+                "LogComponents": {
+                    "serialized": "gASVowAAAAAAAABdlCiMBUN1cnZllIwVUGFyYW1ldHJpY1NwZWVkRmxpZ2h0lIwHUGxhbm5lcpSMIVBhcmFtZXRyaWNTcGVlZERyb25lTW9iaWxpdHlNb2RlbJSMFkRyb25lU2VydmVyQXBwbGljYXRpb26UjBZEcm9uZUNsaWVudEFwcGxpY2F0aW9ulIwbU2NlbmFyaW9Db25maWd1cmF0aW9uSGVscGVylGUu"
+                }
+            },
+            "flow": {
+                "algorithm mode": "data flow",
+                "viewport update mode": "sync",
+                "nodes": [
+                    {
+                        "parent node title": "Attribute",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "Generic ns3 Attribute.",
+                        "position x": 133.80053974674843,
+                        "position y": 125.93548676019273,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Name",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "Attr1",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Value",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "1.0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Attribute",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "Generic ns3 Attribute.",
+                        "position x": 131.80053974674843,
+                        "position y": 239.93548676019273,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Name",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "Attr2",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Value",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "1.0",
+                                "widget position": "besides"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "toList",
+                        "parent node type": "ToList",
+                        "parent node package": "airflow",
+                        "parent node description": "Create a list from one or more inputs.",
+                        "position x": 317.8005397467484,
+                        "position y": 200.93548676019273,
+                        "state data": {
+                            "num data inputs": 2
+                        },
+                        "special actions": {
+                            "add input": {
+                                "method": "action_add_input"
+                            },
+                            "remove input 1": {
+                                "method": "action_remove_input",
+                                "data": 0
+                            },
+                            "remove input 2": {
+                                "method": "action_remove_input",
+                                "data": 1
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "val",
+                        "parent node type": "",
+                        "parent node package": "built in",
+                        "parent node description": "returns the evaluated value that is typed into the widget",
+                        "position x": 319.8005397467484,
+                        "position y": 114.93548676019273,
+                        "main widget data": {
+                            "text": "A Model"
+                        },
+                        "state data": {},
+                        "special actions": {
+                            "edit val via dialog": {
+                                "method": "action_edit_via_dialog"
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "Model",
+                        "parent node type": "",
+                        "parent node package": "airflow",
+                        "parent node description": "Represents a generic model reference in ns-3.",
+                        "position x": 499.8005397467483,
+                        "position y": 149.93548676019273,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "Name",
+                                "has widget": true,
+                                "widget name": "std line edit m",
+                                "widget data": "",
+                                "widget position": "besides"
+                            },
+                            {
+                                "type": "data",
+                                "label": "Attributes",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    },
+                    {
+                        "parent node title": "LteEnbMac",
+                        "parent node type": "",
+                        "parent node package": "iodsim",
+                        "parent node description": "",
+                        "position x": 994.8005397467487,
+                        "position y": 169.93548676019273,
+                        "state data": {},
+                        "special actions": {},
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "ComponentCarrierId",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "ConnEstFailCount",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "RaResponseWindowSize",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "PreambleTransMax",
+                                "has widget": false
+                            },
+                            {
+                                "type": "data",
+                                "label": "NumberOfRaPreambles",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": ""
+                            }
+                        ]
+                    }
+                ],
+                "connections": [
+                    {
+                        "parent node instance index": 0,
+                        "output port index": 0,
+                        "connected node instance": 2,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 1,
+                        "output port index": 0,
+                        "connected node instance": 2,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 2,
+                        "output port index": 0,
+                        "connected node instance": 4,
+                        "connected input port index": 1
+                    },
+                    {
+                        "parent node instance index": 3,
+                        "output port index": 0,
+                        "connected node instance": 4,
+                        "connected input port index": 0
+                    },
+                    {
+                        "parent node instance index": 4,
+                        "output port index": 0,
+                        "connected node instance": 5,
+                        "connected input port index": 1
+                    }
+                ],
+                "drawings": []
+            }
+        }
+    ]
+}

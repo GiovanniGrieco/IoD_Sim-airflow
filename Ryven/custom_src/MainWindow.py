@@ -239,7 +239,7 @@ saving: ctrl+s
         self.try_to_create_new_script(name=self.ui.new_script_name_lineEdit.text())
 
 
-    def try_to_create_new_script(self, name='fancy script', config=None):
+    def try_to_create_new_script(self, name='Workspace', config=None):
         """Tries to create a new script with a given name. If the name is already used or '', it fails."""
         if len(name) == 0:
             return
