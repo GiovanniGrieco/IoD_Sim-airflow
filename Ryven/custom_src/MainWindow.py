@@ -26,9 +26,8 @@ class MainWindow(QMainWindow):
     def __init__(self, config):
         super(MainWindow, self).__init__()
 
-        QFontDatabase.addApplicationFont('../resources/fonts/poppins/Poppins-Medium.ttf')
-        QFontDatabase.addApplicationFont('../resources/fonts/source code pro/SourceCodePro-Regular.ttf')
-        QFontDatabase.addApplicationFont('../resources/fonts/asap/Asap-Regular.ttf')
+        QFontDatabase.addApplicationFont('../resources/fonts/roboto/Roboto-Regular.ttf')
+        QFontDatabase.addApplicationFont('../resources/fonts/roboto mono/RobotoMono-Regular.ttf')
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)

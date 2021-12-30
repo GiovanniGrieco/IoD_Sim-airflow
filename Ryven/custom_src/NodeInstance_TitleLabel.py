@@ -14,7 +14,7 @@ class TitleLabel(QGraphicsWidget):
 
         self.parent_node_instance = parent_node_instance
         self.title_str = self.parent_node_instance.parent_node.title
-        font = QFont('Poppins', 15) if self.parent_node_instance.parent_node.design_style == 'extended' else \
+        font = QFont('Roboto', 15) if self.parent_node_instance.parent_node.design_style == 'extended' else \
             QFont('K2D', 20, QFont.Bold, True)  # should be quite similar to every specific font chosen by the painter
         fm = QFontMetricsF(font)
 

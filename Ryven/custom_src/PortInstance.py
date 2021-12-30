@@ -284,7 +284,7 @@ class PortInstanceLabel(QGraphicsWidget):
         self.parent_port_instance = parent_port_instance
         self.parent_node_instance = parent_node_instance
 
-        self.font = QFont("Source Code Pro", 10, QFont.Bold)
+        self.font = QFont("Roboto Mono", 10, QFont.Bold)
         font_metrics = QFontMetricsF(self.font)  # approximately! the designs can use different fonts
         self.width = font_metrics.width(get_longest_line(self.parent_port_instance.label_str))
         self.height = font_metrics.height() * (self.parent_port_instance.label_str.count('\n') + 1)

@@ -13,9 +13,9 @@ class EditSrcCodeInfoDialog(QDialog):
         # info text edit
         info_text_edit = QTextEdit()
         info_text_edit.setHtml('''
-            <h2 style="font-family: Poppins; font-size: xx-large; color: #a9d5ef;">Some info before you delete the
+            <h2 style="font-family: Roboto; font-size: xx-large; color: #a9d5ef;">Some info before you delete the
             universe</h2>
-            <div style="font-family: Corbel; font-size: large;">
+            <div style="font-family: Roboto; font-size: large;">
 
             <p>Yes, you can change method implementations of objects.
             This can be an extremely powerful feature! Especially when trying to understand nodes more 

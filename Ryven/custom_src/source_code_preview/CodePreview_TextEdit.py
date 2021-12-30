@@ -11,7 +11,7 @@ class CodePreview_TextEdit(QTextEdit):
         self.highlighting = True
         self.editing = False
 
-        self.setFont(QFont('source code pro', 10))
+        self.setFont(QFont('Roboto Mono', 10))
         self.setReadOnly(True)
         self.setTabStopWidth(QFontMetrics(self.font()).width(' ')*4)
 

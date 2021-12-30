@@ -84,7 +84,7 @@ class NIPainter_DarkStd(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, QColor(30, 43, 48) if not hovering else node_color.lighter(),
                 2 if hovering else 1.5,
-                QFont('Poppins', 15),
+                QFont('Roboto', 15),
                 bounding_rect
             )
         else:
@@ -97,7 +97,7 @@ class NIPainter_DarkStd(NIPainter):
 
     def paint_PI_label(painter, option, exec_type, connected, label_str, node_color, bounding_rect):
         c = QColor('#FFFFFF')
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -193,7 +193,7 @@ class NIPainter_DarkTron(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color if not hovering else node_color.lighter(),
                 2,
-                QFont('Poppins', 15),
+                QFont('Roboto', 15),
                 bounding_rect
             )
         else:
@@ -209,7 +209,7 @@ class NIPainter_DarkTron(NIPainter):
             c = QColor('#FFFFFF')
         else:
             c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -352,7 +352,7 @@ class NIPainter_Ghostly(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color if not hovering else node_color.lighter(),
                 2,
-                QFont('Poppins', 15),
+                QFont('Roboto', 15),
                 bounding_rect
             )
         else:
@@ -368,7 +368,7 @@ class NIPainter_Ghostly(NIPainter):
             c = QColor('#FFFFFF')
         else:
             c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -486,7 +486,7 @@ class NIPainter_Blender(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, QColor('#FFFFFF'),
                 2,
-                QFont('Poppins', 15),
+                QFont('Roboto', 15),
                 bounding_rect
             )
         else:
@@ -502,7 +502,7 @@ class NIPainter_Blender(NIPainter):
             c = QColor('#FFFFFF')
         else:
             c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Source Code Pro", 10, QFont.Normal), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
 
@@ -588,14 +588,14 @@ class NIPainter_Easy(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, QColor('#312b29'),
                 2,
-                QFont('ASAP', 13, QFont.Bold),
+                QFont('Roboto', 13, QFont.Bold),
                 bounding_rect
             )
         else:
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color,
                 2,
-                QFont('Poppins', 15, QFont.Thin),
+                QFont('Roboto', 15, QFont.Thin),
                 bounding_rect
             )
 
@@ -608,7 +608,7 @@ class NIPainter_Easy(NIPainter):
                 c = QColor('#cccccc')
             else:
                 c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("source code pro", 10, QFont.Normal), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
         color = None
@@ -701,14 +701,14 @@ class NIPainter_Peasy(NIPainter):
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, QColor('#312b29'),
                 2,
-                QFont('ASAP', 13, QFont.Bold),
+                QFont('Roboto', 13, QFont.Bold),
                 bounding_rect
             )
         else:
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color,
                 2,
-                QFont('Poppins', 15, QFont.Thin),
+                QFont('Roboto', 15, QFont.Thin),
                 bounding_rect
             )
 
@@ -721,7 +721,7 @@ class NIPainter_Peasy(NIPainter):
                 c = QColor('#cccccc')
             else:
                 c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("source code pro", 10, QFont.Normal), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
         color = None
@@ -812,13 +812,13 @@ class NIPainter_Ueli(NIPainter):
     def paint_NI_title_label(painter, option, hovering, design_style, title_str, node_color, bounding_rect):
         if design_style == 'extended':
             painter.setPen(QPen(QColor(node_color.name())))
-            painter.setFont(QFont('Poppins', 13))
+            painter.setFont(QFont('Roboto', 13))
             painter.drawText(bounding_rect, Qt.AlignLeft | Qt.AlignVCenter, title_str)
         else:
             NIPainter.paint_NI_title_label_default(
                 painter, design_style, title_str, node_color,
                 2,
-                QFont('Poppins', 15, QFont.Thin),
+                QFont('Roboto', 15, QFont.Thin),
                 bounding_rect
             )
 
@@ -831,7 +831,7 @@ class NIPainter_Ueli(NIPainter):
                 c = QColor('#cccccc')
             else:
                 c = node_color
-        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("source code pro", 10, QFont.Normal), bounding_rect)
+        NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
         color = None

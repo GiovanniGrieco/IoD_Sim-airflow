@@ -42,12 +42,12 @@ QToolTip {
         main_layout = QGridLayout()
 
         name_label = QLabel(node.title)
-        name_label.setFont(QFont('Poppins', 12))
+        name_label.setFont(QFont('Roboto', 12))
 
         package_name_layout = QHBoxLayout()
 
         package_name_label = QLabel(node.package)
-        package_name_label.setFont(QFont('Arial', 8, italic=True))
+        package_name_label.setFont(QFont('Roboto', 8, italic=True))
         package_name_label.setStyleSheet('color: white;')
 
         package_name_layout_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)

@@ -27,7 +27,7 @@ class CodePreview_Widget(QWidget):
 
         # info label
         info_label = QLabel('Click on edit for more info!')
-        info_label.setFont(QFont('Poppins', 8))
+        info_label.setFont(QFont('Roboto', 8))
         info_and_SH_layout.addWidget(info_label)
 
         # syntax highlighting
