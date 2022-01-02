@@ -8,7 +8,7 @@
             "module name": "airflow___Scenario0",
             "class name": "Scenario",
             "design style": "extended",
-            "color": "#b3e5fc",
+            "color": "#8babb2",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -98,7 +98,7 @@
             "module name": "airflow___Boolean0",
             "class name": "Boolean",
             "design style": "minimalistic",
-            "color": "#fdd835",
+            "color": "#cd9964",
             "has main widget": true,
             "widget position": "between ports",
             "custom input widgets": [],
@@ -117,7 +117,7 @@
             "module name": "airflow___SelectDirectory0",
             "class name": "SelectDirectory",
             "design style": "extended",
-            "color": "#fdd835",
+            "color": "#cd9964",
             "has main widget": true,
             "widget position": "between ports",
             "custom input widgets": [],
@@ -136,7 +136,7 @@
             "module name": "airflow___ToList0",
             "class name": "ToList",
             "design style": "minimalistic",
-            "color": "#fdd835",
+            "color": "#cd9964",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -160,7 +160,7 @@
             "module name": "airflow___Vector0",
             "class name": "Vector",
             "design style": "extended",
-            "color": "#fdd835",
+            "color": "#cd9964",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -200,7 +200,7 @@
             "module name": "airflow___Entity0",
             "class name": "Entity",
             "design style": "extended",
-            "color": "#64dd17",
+            "color": "#c2b978",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -234,7 +234,7 @@
             "module name": "airflow___Trajectory0",
             "class name": "Trajectory",
             "design style": "extended",
-            "color": "#ef5350",
+            "color": "#c46ca5",
             "has main widget": true,
             "widget position": "under ports",
             "custom input widgets": [],
@@ -259,7 +259,7 @@
             "module name": "airflow___Point0",
             "class name": "Point",
             "design style": "extended",
-            "color": "#fdd835",
+            "color": "#cd9964",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -297,7 +297,7 @@
             "module name": "airflow___Model0",
             "class name": "Model",
             "design style": "extended",
-            "color": "#d50000",
+            "color": "#a56fbe",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -328,7 +328,7 @@
             "module name": "airflow___Attribute0",
             "class name": "Attribute",
             "design style": "extended",
-            "color": "#fdd835",
+            "color": "#cd9964",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -361,7 +361,7 @@
             "module name": "airflow___WifiPhyLayer0",
             "class name": "WifiPhyLayer",
             "design style": "extended",
-            "color": "#f57c00",
+            "color": "#ffa753",
             "has main widget": false,
             "custom input widgets": [
                 "WifiStandardSelector",
@@ -414,7 +414,7 @@
             "module name": "airflow___WifiMacLayer0",
             "class name": "WifiMacLayer",
             "design style": "extended",
-            "color": "#f57c00",
+            "color": "#ffa753",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -445,7 +445,7 @@
             "module name": "airflow___Ipv4NetworkLayer0",
             "class name": "Ipv4NetworkLayer",
             "design style": "extended",
-            "color": "#f57c00",
+            "color": "#ffa753",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [
@@ -478,7 +478,7 @@
             "module name": "airflow___WifiNetDevice0",
             "class name": "WifiNetDevice",
             "design style": "extended",
-            "color": "#d4e157",
+            "color": "#ffa753",
             "has main widget": false,
             "custom input widgets": [],
             "inputs": [

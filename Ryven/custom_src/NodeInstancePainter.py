@@ -95,23 +95,17 @@ class NIPainter_Light(NIPainter):
     def paint_PI_label(painter, option, exec_type, connected, label_str, node_color, bounding_rect):
         c = None
         if not connected:
-            c = QColor('#797e82')
+            c = QColor('#6f6f6f')
         else:
-            if exec_type == 'exec':
-                c = QColor('#cccccc')
-            else:
-                c = node_color
+            c = node_color
         NIPainter.paint_PI_label_default(painter, label_str, c, QFont("Roboto Mono", 10, QFont.Normal), bounding_rect)
 
     def paint_PI(painter, option, node_color, exec_type, connected, padding, w, h):
         color = None
         if not connected:
-            color = QColor('#797e82')
+            color = QColor('#6f6f6f')
         else:
-            if exec_type == 'exec':
-                color = QColor('#dddddd')
-            else:
-                color = node_color
+            color = node_color
 
         if exec_type == 'exec':
             if connected or \
@@ -158,7 +152,7 @@ class NIPainter_Light(NIPainter):
         :param title_rect: NI's title label's bounding rect
         """
 
-        background_color = QColor('#ffffff')
+        background_color = QColor('#f2f2f2')
         header_color = c
 
         header_height = NIPainter.get_header_rect(w, h, title_rect).height()
@@ -176,7 +170,7 @@ class NIPainter_Light(NIPainter):
             bounding_rect.bottomRight()
         ), 6, 6)
 
-    def draw_NI_minimalistic(painter, c, w, h, bounding_rect, background_color=QColor('#3c3c3c')):
+    def draw_NI_minimalistic(painter, c, w, h, bounding_rect, background_color=QColor('#f2f2f2')):
         """
         :param painter: painter from paint event
         :param c_s: corner size/corner radius

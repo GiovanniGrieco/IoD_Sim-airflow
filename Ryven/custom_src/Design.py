@@ -44,14 +44,15 @@ class FlowTheme:
 class DesignContainer(QObject):
     flow_themes = [
         FlowTheme('light',
-                  QColor('#0000ff'),
+                  QColor('#00ff00'),
                   2,
                   Qt.SolidLine,
-                  QColor('#00ff00'),
+                  QColor('#1a1a1a'),
                   2,
                   Qt.DashLine,
                   NIPainter_Light,
-                  QColor('#fefefe')),
+                  QColor('#fcfbfb')),
+                  #QColor('#fefefe')),
         FlowTheme('dark',
                   QColor('#ffffff'),
                   2,
@@ -63,7 +64,7 @@ class DesignContainer(QObject):
                   QColor('#1e1e1e'))
     ]
 
-    start_flow_theme = flow_themes[-1]
+    start_flow_theme = flow_themes[0] # light by default
     flow_theme = None  # initialized by MainWindow
     flow_theme_changed = Signal(str)
     performance_mode = 'pretty'

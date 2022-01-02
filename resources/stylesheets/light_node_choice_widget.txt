@@ -1,12 +1,12 @@
 QWidget {
 	background-color: #f8f8f8;
-	border-radius: 3px;
+	border-radius: 8px;
 	border: 1px solid #7b9bb3;
 	color: #191a1a;
 }
 
 QPushButton {
-	border-radius: 5px;
+	border-radius: 4px;
 	padding: 4px;
 	background-color: #fafcfd;
 	min-width: 60px;
@@ -34,13 +34,13 @@ QScrollBar:horizontal {
 	background: #f4f7fa;
 	height: 6px;
 	margin: 0 22px 0 22px;
-	border-radius: 7px;
+	border-radius: 4px;
 }
 
 QScrollBar::handle:horizontal {
 	background: #888888;
 	min-height: 12px;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 QScrollBar::add-line:horizontal {
@@ -60,13 +60,13 @@ QScrollBar:vertical {
 	background: #f4f7fa;
 	width: 6px;
 	margin: 14px 0 14px 0;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 QScrollBar::handle:vertical {
 	background: #888888;
 	min-height: 20px;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 QScrollBar::add-line:vertical {

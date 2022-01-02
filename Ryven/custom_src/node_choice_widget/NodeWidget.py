@@ -14,13 +14,14 @@ class NodeWidget(QWidget):
         self.custom_focused = False
         self.custom_focused_stylesheet = '''
 NodeWidget {
-    border: 2px solid #49aeed;
-    background-color: #246187;
+    border: 2px solid #eae2e3;
+    background-color: #f9f4f4;
 }
         '''
         self.custom_unfocused_stylesheet = '''
 NodeWidget {
-    border: 2px solid #3d3d3d;
+    border: 2px solid #e5e5e5;
+    background-color: #fdfbfb;
 }
         '''
         self.contents_stylesheet = '''
@@ -33,7 +34,7 @@ QToolTip {
     background-color: #040f16;
     color: #3B9CD9;
     border: 2px solid #144a6b;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 5px;
 }
         '''

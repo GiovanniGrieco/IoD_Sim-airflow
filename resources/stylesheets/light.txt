@@ -1,12 +1,13 @@
 QWidget {
 	background-color: #f0f3f9;
-	border-radius: 3px;
+	border-radius: 8px;
 	border: 1px solid #7b9bb3;
 	color: #191a1a;
+	font-size: medium;
 }
 
 QPushButton {
-	border-radius: 5px;
+	border-radius: 4px;
 	padding: 4px;
 	background-color: #fafcfd;
 	min-width: 60px;
@@ -60,8 +61,8 @@ QLabel, QCheckBox, QRadioButton {
 
 QCheckBox:indicator {
 	border: 1px solid #000000;
-	border-radius: 2px;
-	background: transparent;
+	border-radius: 4px;
+	background: #ffffff;
 }
 
 QCheckBox:indicator:checked {
@@ -70,8 +71,8 @@ QCheckBox:indicator:checked {
 
 QRadioButton:indicator {
 	background: transparent;
-	border: 1px solid #000000;
-	border-radius: 5px;
+	border: 1px solid #ffffff;
+	border-radius: 4px;
 }
 
 QRadioButton:indicator:checked {
@@ -88,10 +89,10 @@ QLabel:disabled {
 }
 
 QToolTip {
-	background-color: #000000;
-	color: #000000;
-	border: 2px solid #000000;
-	border-radius: 3px;
+	background-color: #fdfbfb;
+	color: #1b1b1b;
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
 	padding: 5px;
 }
 
@@ -104,13 +105,13 @@ QScrollBar:horizontal {
 	background: #f4f7fa;
 	height: 6px;
 	margin: 0 22px 0 22px;
-	border-radius: 7px;
+	border-radius: 4px;
 }
 
 QScrollBar::handle:horizontal {
 	background: #888888;
 	min-height: 12px;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 QScrollBar::add-line:horizontal {
@@ -130,13 +131,13 @@ QScrollBar:vertical {
 	background: #f4f7fa;
 	width: 6px;
 	margin: 14px 0 14px 0;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 QScrollBar::handle:vertical {
 	background: #888888;
 	min-height: 20px;
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 QScrollBar::add-line:vertical {
@@ -154,35 +155,4 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 
 QGraphicsView {
 	border-style: none;
-}
-
-QTabWidget::pane { /* The tab widget frame */
-    border: none;
-}
-
-QTabWidget::tab-bar {
-    left: 5px; /* move to the right by 5px */
-}
-
-/* Style the tab using the tab sub-control. Note that
-    it reads QTabBar _not_ QTabWidget */
-QTabBar::tab {
-    background: transparent;
-	border-bottom: none;
-	border-left: none;
-	border-right: none;
-	border-top: 2px solid rgb(0, 0, 0);
-	color: rgb(0, 0, 0);
-    min-width: 8px;
-    padding: 4px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-QTabBar::tab:!selected {
-    margin-top: 5px; /* make non-selected tabs look smaller */
-}
-
-QTabBar::tab:selected {
-	border-bottom: 2px solid rgb(0, 0, 0);
 }

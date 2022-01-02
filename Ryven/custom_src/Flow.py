@@ -437,7 +437,7 @@ class Flow(QGraphicsView):
 
                     # highlight hovered connections
                     if self.hovered_port_inst_gate == o.gate or self.hovered_port_inst_gate is cpi.gate:
-                        c = QColor('#c5c5c5')
+                        c = QColor('#000000')
                         pen.setWidth(5)
 
                     c_r = c.red()
@@ -453,7 +453,7 @@ class Flow(QGraphicsView):
 
         # DRAW CURRENTLY DRAGGED CONNECTION
         if self.dragging_connection:
-            pen = QPen('#ffffff')
+            pen = QPen('#1a1a1a')
             pen.setWidth(3)
             pen.setStyle(Qt.DotLine)
             painter.setPen(pen)
@@ -470,7 +470,7 @@ class Flow(QGraphicsView):
 
         # DRAW SELECTED NIs BORDER
         for ni in self.selected_node_instances():
-            pen = QPen(QColor('#245d75'))
+            pen = QPen(QColor('#a5a5a5'))
             pen.setWidth(3)
             painter.setPen(pen)
             painter.setBrush(Qt.NoBrush)
@@ -482,9 +482,9 @@ class Flow(QGraphicsView):
             h = ni.boundingRect().height() * size_factor
             painter.drawRoundedRect(x, y, w, h, 10, 10)
 
-        # DRAW SELECTED DRAWINGS BORDER
+        # DRAW SELECTED DRAWINGS BORDER - DEPRECATED
         for p_o in self.selected_drawings():
-            pen = QPen(QColor('#a3cc3b'))
+            pen = QPen(QColor('#00ff00'))
             pen.setWidth(2)
             painter.setPen(pen)
             painter.setBrush(Qt.NoBrush)
