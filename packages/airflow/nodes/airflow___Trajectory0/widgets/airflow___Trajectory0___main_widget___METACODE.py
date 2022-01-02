@@ -48,7 +48,7 @@ class %CLASS%(QWidget, MWB):
         self.setStyleSheet('''
             background-color: transparent;
         ''')
-        mpl_style(dark=True)
+        mpl_style(dark=False)
 
         self.setLayout(QVBoxLayout())
         self.canvas = FigureCanvas(Figure())
@@ -160,10 +160,10 @@ class %CLASS%(QWidget, MWB):
         cpy = [p.y for p in control_points]
         cpz = [p.z for p in control_points]
 
-        self.ax.scatter(dx[0], dy[0], dz[0], marker='.', label='Take off')
-        self.ax.scatter(dx[-1], dy[-1], dz[-1], marker='x', label='Landing')
+        self.ax.scatter(dx[0], dy[0], dz[0], marker='.', s=150.0, linewidth=3, label='Take off')
+        self.ax.scatter(dx[-1], dy[-1], dz[-1], marker='x', s=150.0, linewidth=3, label='Landing')
         # exclude first and last points because they are relevant to drone take off and landing
-        self.ax.scatter(cpx[1:-1], cpy[1:-1], cpz[1:-1], marker='o', label='Control point')
+        self.ax.scatter(cpx[1:-1], cpy[1:-1], cpz[1:-1], marker='.', s=150.0, linewidth=3, label='Control point')
         self.ax.plot(dx, dy, dz, label='Drone trajectory')
 
     def get_data(self):
