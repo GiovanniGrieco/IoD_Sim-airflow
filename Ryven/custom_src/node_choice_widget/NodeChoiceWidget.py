@@ -27,7 +27,7 @@ class NodeChoiceWidget(QWidget):
 
         self.node_widget_index_counter = 0
 
-        self.setMinimumWidth(260)
+        self.setMinimumWidth(600)
         self.setFixedHeight(450)
 
         self.main_layout = QVBoxLayout(self)
@@ -133,13 +133,6 @@ class NodeChoiceWidget(QWidget):
 
         # nodes
         if len(self.current_nodes) > 0:
-            nodes_label = QLabel('Hover for description')
-            nodes_label_font = QFont('Roboto')
-            nodes_label_font.setPixelSize(15)
-            nodes_label.setStyleSheet('color: #9bbf9dff; border: none;')
-            nodes_label.setFont(nodes_label_font)
-            self.list_layout.addWidget(nodes_label)
-
             for n in self.current_nodes:
                 node_widget = self.create_list_item_widget(n)
                 self.list_layout.addWidget(node_widget)
@@ -147,10 +140,6 @@ class NodeChoiceWidget(QWidget):
 
         if len(self.all_current_node_widgets) > 0:
             self.set_active_node_widget_index(0)
-
-        # self.setFixedWidth(self.minimumWidth())
-        # print(self.list_scroll_area_widget.width())
-
 
     def get_sorted_dict_matching_search(self, items_dict, text):
         indices_dict = {}

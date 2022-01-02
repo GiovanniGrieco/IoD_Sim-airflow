@@ -50,8 +50,6 @@ class Script(QObject):
         self.widget.ui.variables_scrollArea.setWidget(self.vars_manager.list_widget)
         self.widget.ui.add_variable_push_button.clicked.connect(self.add_var_clicked)
         self.widget.ui.new_var_name_lineEdit.returnPressed.connect(self.new_var_line_edit_return_pressed)
-        #self.widget.ui.algorithm_data_flow_radioButton.toggled.connect(self.flow.algorithm_mode_data_flow_toggled)
-        #self.widget.ui.viewport_update_mode_sync_radioButton.toggled.connect(self.flow.viewport_update_mode_sync_toggled)
 
         # flow
         self.widget.ui.splitter.insertWidget(0, self.flow)
@@ -62,14 +60,6 @@ class Script(QObject):
         self.widget.ui.pushButton_IoDSimLocation.clicked.connect(self.set_iodsim_location_clicked)
         self.widget.ui.button_Build_IoDSimTools.clicked.connect(self.build_iodsim_scenario_clicked)
         self.widget.ui.button_Run_IoDSimTools.clicked.connect(self.run_iodsim_scenario_clicked)
-
-        # code preview
-        self.widget.ui.source_code_groupBox.layout().addWidget(self.code_preview_widget)
-
-        # logs
-        self.widget.ui.logs_scrollArea.setWidget(self.logger)
-        self.widget.ui.splitter.setSizes([700, 0])
-
 
     def show_NI_code(self, ni):
         """Called from Flow when the selection changed."""
