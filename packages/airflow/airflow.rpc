@@ -2,7 +2,7 @@
     "type": "Ryven nodes package",
     "nodes": [
         {
-            "title": "scenario",
+            "title": "Scenario",
             "description": "Configure an IoD Sim scenario.",
             "type": "Scenario",
             "module name": "airflow___Scenario0",
