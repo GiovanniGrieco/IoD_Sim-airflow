@@ -6,11 +6,11 @@ class %CLASS%(NodeInstance):
 
     def update_event(self, input_called=-1):
         d = {
-            'name': "ns3::LrWpanMac",
+            'name': "ns3::PhasedArrayModel",
             'attributes': []
         }
 
-        if self.input(0): d["attributes"].append({"name": "PanId", "value": int(self.input(0))})
+        if self.input(0): d["attributes"].append({"name": "AntennaElement", "value": self.input(0)})
 
         self.set_output_val(0, d)
 

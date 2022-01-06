@@ -11,7 +11,7 @@ class %CLASS%(NodeInstance):
         }
 
         if self.input(0): d["attributes"].append({"name": "PrintStats", "value": bool(self.input(0))})
-        if self.input(1): d["attributes"].append({"name": "UseVhtOnly", "value": bool(self.input(1))})
+        if self.input(1): d["attributes"].append({"name": "UseLatestAmendmentOnly", "value": bool(self.input(1))})
         if self.input(2): d["attributes"].append({"name": "PacketLength", "value": int(self.input(2))})
         if self.input(3): d["attributes"].append({"name": "SampleColumn", "value": int(self.input(3))})
         if self.input(4): d["attributes"].append({"name": "EWMA", "value": int(self.input(4))})

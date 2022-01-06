@@ -26,15 +26,23 @@ from NIENV import *
 
 
 class %CLASS%(NodeInstance):
+    default_mobility_model = {
+        'name': 'ns3::ConstantPositionMobilityModel',
+        'attributes': []
+    }
+
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
 
-
     def update_event(self, input_called=-1):
+        applications = self.input(0) if self.input(0) is not None else []
+        mobility_model = self.input(3) if self.input(3) is not None else self.default_mobility_model
+        network_devices = self.input(4) if self.input(4) is not None else []
+
         self.set_output_val(0, {
-            'applications': self.input(0),
-            'mobilityModel': self.input(1),
-            'netDevices': self.input(2)
+            'applications': applications,
+            'mobilityModel': mobility_model,
+            'netDevices': network_devices
         })
 
     def get_data(self):

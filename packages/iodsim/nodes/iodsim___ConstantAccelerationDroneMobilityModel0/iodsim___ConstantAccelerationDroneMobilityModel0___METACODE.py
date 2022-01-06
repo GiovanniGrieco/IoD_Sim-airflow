@@ -11,12 +11,11 @@ class %CLASS%(NodeInstance):
         }
 
         if self.input(0): d["attributes"].append({"name": "CurveStep", "value": float(self.input(0))})
-        if self.input(1): d["attributes"].append({"name": "SimulationDuration", "value": float(self.input(1))})
-        if self.input(2): d["attributes"].append({"name": "FlightPlan", "value": self.input(2)})
-        if self.input(3): d["attributes"].append({"name": "MaxSpeed", "value": float(self.input(3))})
-        if self.input(4): d["attributes"].append({"name": "Acceleration", "value": float(self.input(4))})
-        if self.input(5): d["attributes"].append({"name": "Velocity", "value": self.input(5)})
-        if self.input(6): d["attributes"].append({"name": "Position", "value": self.input(6)})
+        if self.input(1): d["attributes"].append({"name": "FlightPlan", "value": self.input(1)})
+        if self.input(2): d["attributes"].append({"name": "MaxSpeed", "value": float(self.input(2))})
+        if self.input(3): d["attributes"].append({"name": "Acceleration", "value": float(self.input(3))})
+        if self.input(4): d["attributes"].append({"name": "Velocity", "value": self.input(4)})
+        if self.input(5): d["attributes"].append({"name": "Position", "value": self.input(5)})
 
         self.set_output_val(0, d)
 

@@ -30,10 +30,15 @@ class %CLASS%(NodeInstance):
         super(%CLASS%, self).__init__(params)
 
     def update_event(self, input_called=-1):
+        net_address = self.input(0) if self.input(0) is not None else '10.0.0.0'
+        net_mask = self.input(1) if self.input(1) is not None else '255.255.255.0'
+        net_gateway = self.input(2) if self.input(2) is not None else '10.0.0.255'
+
         self.set_output_val(0, {
             'type': 'ipv4',
-            'address': self.input(0),
-            'mask': self.input(1)
+            'address': net_address,
+            'mask': net_mask,
+            'gateway': net_gateway
         })
 
     def get_data(self):

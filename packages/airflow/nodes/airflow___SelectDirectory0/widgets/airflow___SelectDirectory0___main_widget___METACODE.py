@@ -18,29 +18,6 @@ class %CLASS%(QWidget, MWB):
         self.select_directory_button.clicked.connect(M(self.select_directory_button_clicked))
         self.layout().addWidget(self.path_line_edit)
         self.layout().addWidget(self.select_directory_button)
-
-        self.setStyleSheet('''
-            QWidget {
-                background: transparent;
-            }
-            QLineEdit {
-                border-radius: 10px;
-                background-color: transparent;
-                border: 1px solid #202020;
-                color: #aaaaaa;
-                padding: 3px;
-            }
-            QPushButton {
-                background-color: #36383B;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                padding-left: 22px;
-                padding-right: 22px;
-                border: 1px solid #5a5a5a;
-                border-radius: 5px;
-                color: #c6c6c6;
-            }
-        ''')
         self.setFixedWidth(150)
 
     def select_directory_button_clicked(self):

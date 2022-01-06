@@ -26,33 +26,29 @@ from NIENV import *
 
 
 class %CLASS%(NodeInstance):
+    default_size = {
+        'X': '1000',
+        'Y': '1000',
+        'Z': '100'
+    }
+
     def __init__(self, params):
         super(%CLASS%, self).__init__(params)
 
-        self.key_lookup = {
-            'Name': 'name',
-            'Log on File': 'logOnFile',
-            'Duration': 'duration',
-            'Results Path': 'resultsPath',
-            'Log Components': 'logComponents',
-            'World': "world",
-            'ns3 Config': 'staticNs3Config',
-            'PHY Layers': 'phyLayer',
-            'MAC Layers': 'macLayer',
-            'NET Layers': 'networkLayer',
-            'Drone List': 'drones',
-            'ZSP List': 'ZSPs',
-            'Remote List': 'remotes'
-        }
-
-        # self.special_actions['action name'] = {'method': M(self.action_method)}
-        # ...
-
     def update_event(self, input_called=-1):
-        pass
+        size = self.input(0) if self.input(0) is not None else self.default_size
+        buildings = self.input(1) if self.input(1) is not None else []
+        rois = self.input(2) if self.input(2) is not None else []
+
+        self.set_output_val(0, {
+            'size': size,
+            'buildings': buildings,
+            'regionsOfInterest': rois
+        })
 
     def get_data(self):
-        return {self.key_lookup[x.label_str]: x.get_val() for x in self.inputs}
+        data = {}
+        return data
 
     def set_data(self, data):
         pass

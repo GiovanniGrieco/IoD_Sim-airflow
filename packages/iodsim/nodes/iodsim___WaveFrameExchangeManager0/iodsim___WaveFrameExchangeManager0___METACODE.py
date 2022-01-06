@@ -6,12 +6,12 @@ class %CLASS%(NodeInstance):
 
     def update_event(self, input_called=-1):
         d = {
-            'name': "ns3::BsmApplication",
+            'name': "ns3::WaveFrameExchangeManager",
             'attributes': []
         }
 
-        if self.input(0): d["attributes"].append({"name": "StopTime", "value": float(self.input(0))})
-        if self.input(1): d["attributes"].append({"name": "StartTime", "value": float(self.input(1))})
+        if self.input(0): d["attributes"].append({"name": "SetQueueSize", "value": bool(self.input(0))})
+        if self.input(1): d["attributes"].append({"name": "PifsRecovery", "value": bool(self.input(1))})
 
         self.set_output_val(0, d)
 

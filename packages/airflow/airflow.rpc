@@ -194,11 +194,60 @@
             ]
         },
         {
-            "title": "Entity",
-            "description": "Create a new Entity to be simulated.",
-            "type": "Entity",
-            "module name": "airflow___Entity0",
-            "class name": "Entity",
+            "title": "Drone",
+            "description": "Simulate a Drone.",
+            "type": "Drone",
+            "module name": "airflow___Drone0",
+            "class name": "Drone",
+            "design style": "extended",
+            "color": "#c2b978",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Applications",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Battery",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Mechanics",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Mobility Model",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Network Devices",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Peripherals",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "ZSP",
+            "description": "Simulate a Zone Service Provider.",
+            "type": "ZSP",
+            "module name": "airflow___ZSP0",
+            "class name": "ZSP",
             "design style": "extended",
             "color": "#c2b978",
             "has main widget": false,
@@ -462,6 +511,13 @@
                     "has widget": true,
                     "widget name": "std line edit m r",
                     "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Gateway",
+                    "has widget": true,
+                    "widget name": "std line edit m r",
+                    "widget position": "besides"
                 }
             ],
             "outputs": [
@@ -493,6 +549,40 @@
                     "has widget": true,
                     "widget name": "std spin box",
                     "widget position": "besides"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "World",
+            "description": "Virtual world definition.",
+            "type": "World",
+            "module name": "airflow___World0",
+            "class name": "World",
+            "design style": "extended",
+            "color": "#ffa753",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Size",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Buildings",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Regions of Interest",
+                    "has widget": false
                 }
             ],
             "outputs": [

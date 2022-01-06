@@ -12,7 +12,8 @@ class %CLASS%(NodeInstance):
 
         if self.input(0): d["attributes"].append({"name": "MaxGain", "value": float(self.input(0))})
         if self.input(1): d["attributes"].append({"name": "Orientation", "value": float(self.input(1))})
-        if self.input(2): d["attributes"].append({"name": "Beamwidth", "value": float(self.input(2))})
+        if self.input(2): d["attributes"].append({"name": "HorizontalBeamwidth", "value": float(self.input(2))})
+        if self.input(3): d["attributes"].append({"name": "VerticalBeamwidth", "value": float(self.input(3))})
 
         self.set_output_val(0, d)
 
