@@ -36,7 +36,9 @@
                 {
                     "type": "data",
                     "label": "Results Path",
-                    "has widget": false
+                    "has widget": true,
+                    "widget name": "std line edit l",
+                    "widget position": "besides"
                 },
                 {
                     "type": "data",
@@ -583,6 +585,234 @@
                     "type": "data",
                     "label": "Regions of Interest",
                     "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "building",
+            "description": "",
+            "type": "Building",
+            "module name": "airflow___Building0",
+            "class name": "Building",
+            "design style": "extended",
+            "color": "#ffa753",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "type",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "walls",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "boundaries",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "floors",
+                    "has widget": true,
+                    "widget name": "std spin box",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "rooms",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "box",
+            "description": "",
+            "type": "Box",
+            "module name": "airflow___Box0",
+            "class name": "Box",
+            "design style": "extended",
+            "color": "#ffa753",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Min X",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Max X",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Min Y",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Max Y",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Min Z",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Max Z",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "LTE PHY Layer",
+            "description": "",
+            "type": "LtePhyLayer",
+            "module name": "airflow___LtePhyLayer0",
+            "class name": "LtePhyLayer",
+            "design style": "extended",
+            "color": "#ffa753",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Propagation Loss Model",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "Spectrum Model",
+                    "has widget": false
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "LTE Mac Layer",
+            "description": "",
+            "type": "LteMacLayer",
+            "module name": "airflow___LteMacLayer0",
+            "class name": "LteMacLayer",
+            "design style": "extended",
+            "color": "#ffa753",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "LTE Net Device",
+            "description": "",
+            "type": "LteNetDevice",
+            "module name": "airflow___LteNetDevice0",
+            "class name": "LteNetDevice",
+            "design style": "extended",
+            "color": "#ffa753",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "role",
+                    "has widget": true,
+                    "widget name": "std line edit m",
+                    "widget position": "besides"
+                },
+                {
+                    "type": "data",
+                    "label": "Bearers",
+                    "has widget": false
+                },
+                {
+                    "type": "data",
+                    "label": "NET Layer ID",
+                    "has widget": true,
+                    "widget name": "std spin box",
+                    "widget position": "besides"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "data",
+                    "label": ""
+                }
+            ]
+        },
+        {
+            "title": "remote",
+            "description": "",
+            "type": "Remote",
+            "module name": "airflow___Remote0",
+            "class name": "Remote",
+            "design style": "extended",
+            "color": "#ffa753",
+            "has main widget": false,
+            "custom input widgets": [],
+            "inputs": [
+                {
+                    "type": "data",
+                    "label": "Applications",
+                    "has widget": false
+                },
+                {
+                    "type": "exec",
+                    "label": "NET Layer ID"
                 }
             ],
             "outputs": [
